@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-SDK_VERSION_NUMBER.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function getHtml(template) {
+           return template.join('\n');
+        }
+        listAlbums();
+     </script>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+</head>
+
+<link rel="stylesheet" href="upload.css">
+
+    <body>
+        <form>
+            <input type="file" id="file" accept="image/*" style="display:none" multiple>
+            <!--업로드파일 이미지로 제한(컴퓨터 자체 판단)-->   
+            <div class="button" style="text-align: center" onclick="onclick=document.all.file.click()">
+                파일업로드
+            </div>
+            <div class="button" onclick="onclick=alert('만들어야쥬')">
+                업로드
+            </div>
+
+            <div class="drop-zone">
+                또는 파일을 여기로 드래그하세요.
+            </div>
+        </form>
+
+
+    <script>
+        (function() {
+            
+            var $file = document.getElementById("file")
+            var dropZone = document.querySelector(".drop-zone")
+
+            var toggleClass = function(className) {
+                
+                console.log("current event: " + className)
+
+                var list = ["dragenter", "dragleave", "dragover", "drop"]
+
+                for (var i = 0; i < list.length; i++) {
+                    if (className === list[i]) {
+                        dropZone.classList.add("drop-zone-" + list[i])
+                    } else {
+                        dropZone.classList.remove("drop-zone-" + list[i])
+                    }
+                }
+            }
+            
+            var showFiles = function(files) {
+                dropZone.innerHTML = ""
+                for(var i = 0, len = files.length; i < len; i++) {
+                    dropZone.innerHTML += "<p>" + (i+1) + ". " + files[i].name + "</p>"
+                }
+            }
+
+            var selectFile = function(files) {
+                // input file 영역에 드랍된 파일들로 대체
+                $file.files = files
+                showFiles($file.files)
+            }
+            
+            $file.addEventListener("change", function(e) {
+                showFiles(e.target.files)
+            })
+
+            // 드래그한 파일이 최초로 진입했을 때
+            dropZone.addEventListener("dragenter", function(e) {
+                e.stopPropagation()
+                e.preventDefault()
+
+                toggleClass("dragenter")
+            })
+
+            // 드래그한 파일이 dropZone 영역을 벗어났을 때
+            dropZone.addEventListener("dragleave", function(e) {
+                e.stopPropagation()
+                e.preventDefault()
+
+                toggleClass("dragleave")
+            })
+
+            // 드래그한 파일이 dropZone 영역에 머물러 있을 때
+            dropZone.addEventListener("dragover", function(e) {
+                e.stopPropagation()
+                e.preventDefault()
+
+                toggleClass("dragover")
+
+            })
+
+            // 드래그한 파일이 드랍되었을 때
+            dropZone.addEventListener("drop", function(e) {
+                e.preventDefault()
+
+                toggleClass("drop")
+
+                var files = e.dataTransfer && e.dataTransfer.files
+                console.log(files)
+                alert(files.length + " files dragged")
+
+                if (files != null) {
+                    if (files.length < 1) {
+                        alert("폴더 업로드 불가")
+                        return
+                    }
+                    selectFile(files)
+                } else {
+                    alert("ERROR")
+                }
+            })
+        })()
+    </script>
+
+</body></html>
