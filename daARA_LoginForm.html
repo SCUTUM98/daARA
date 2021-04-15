@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>다아라 로그인</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Javascript SDKs-->
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+        <script src="js/amazon-cognito-auth.min.js"></script>
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
+        <script src="js/amazon-cognito-identity.min.js"></script>  
+        
+        
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <div class="daAra-logo">
+                <img src="img/daARA logo 1.png" style="max-width: 100%; height: auto;">    
+            </div>
+            <div id = "ID_form-wrap" class="form-wrap">
+                
+                <div class="button-wrap">
+                    
+                    <div id="btn"></div>
+                    <button type="button" class="togglebtn" onclick="login()">로그인</button>
+                    <button type="button" class="togglebtn" onclick="register()">회원가입</button>
+                </div>
+                <form id="login" action="" class="input-group">
+                    <input type="text" class="input-field" id="inputUsername"  placeholder="이메일 주소" name="username" required autofocus>
+                    <input type="password" class="input-field" id="inputPassword"  placeholder="비밀번호" name="password" onkeyup="enterKey();" required>    
+                    <button class="submit" type="button" id = "sign_in_BTN" onclick="loginButton()">로그인</button>
+                    <input type="text" class="submitErrMSG" id="loginErr" style="color: red;" readonly></textarea>
+                </form>
+                <form id="register" action="" class="input-group">
+                    <input type="personalname" class="input-field" id="personalnameRegister" placeholder="아이디" pattern=".*" required>
+                    <input type="email" class="input-field" id="emailInputRegister" placeholder="이메일" pattern=".*" required>
+                    <input type="password" class="input-field" id="passwordInputRegister" placeholder="비밀번호(영문, 숫자, 특수문자)" pattern=".*" required>
+                    <input type="password" class="input-field" id="confirmationpassword" placeholder="비밀번호 재입력" pattern=".*" required>
+                    <button id="mainbutton" class="submit" id = "register_BTN" type="button" onclick="registerButton()">회원가입</button>
+                    <input type="text" class="submitErrMSG" id="registerErr" style="color: red;" readonly></textarea>
+                   
+                </form>
+            </div>
+        </div>
+        <script src="index.js"></script>
+        <script src = 'js/loginForm.js'> </script>
+    </body>
+
+</html>

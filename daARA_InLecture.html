@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>⚡ Electron Screen Recorder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+    <script defer src="js/daARA_InLecture.js"></script>
+  </head>
+  <body class="content">
+    <h1>🏴‍☠️ 다아라 강의 화면</h1>
+    <video></video>
+
+    <button id="startBtn" class="button is-primary">강의 시작하기</button>
+    <button id="stopBtn" class="button is-warning">강의 종료하기</button>
+
+    <hr />
+
+    <progress id="saveProgressBar" class="progress is-small is-primary" max="100"></progress>
+
+    <button id="videoSelectBtn" class="button is-text">
+    강의화면 선택하기
+    </button>
+  </body>
+</html>
