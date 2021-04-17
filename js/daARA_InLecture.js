@@ -13,9 +13,13 @@ videoSelectBtn.onclick = getVideoSources;
 
 async function getVideoSources() {
     const inputSources = await desktopCapturer.getSources({
-      types: ['window', 'screen']
-    });
-  
+      types: ['window', 'screen'],
+      thumbnailSize: {
+        height: 1024,
+        width : 1024
+      }      
+    })
+
     const videoOptionsMenu = Menu.buildFromTemplate(
       inputSources.map(source => {
         return {
@@ -23,43 +27,51 @@ async function getVideoSources() {
           click: () => selectSource(source)
         };
       })
-    );
-  
-  
+    );  
+      
     videoOptionsMenu.popup();
   }
 
 // Change the videoSource window to record
-async function selectSource(source) {
+async function selectSource(source) 
+{
+  videoSelectBtn.innerText = source.name;
 
-    videoSelectBtn.innerText = source.name;
-  
-    const constraints = {
-      audio: false,
-      video: {
-        mandatory: {
-          chromeMediaSource: 'desktop',
-          chromeMediaSourceId: source.id
-        }
+  const constraints = {
+    audio: false,
+    video: {
+      mandatory: {
+        chromeMediaSource: 'desktop',
+        chromeMediaSourceId: source.id
       }
-    };
+    }
+  };
   
-    // Create a Stream
-    const stream = await navigator.mediaDevices
-      .getUserMedia(constraints);
-  
-    // Preview the source in a video element
-    videoElement.srcObject = stream;
-    videoElement.play();
-  
-    // Create the Media Recorder
-    const options = { mimeType: 'video/webm; codecs=vp9' };
-    mediaRecorder = new MediaRecorder(stream, options);
-  
-    // Register Event Handlers
-    mediaRecorder.ondataavailable = handleDataAvailable;
-    mediaRecorder.onstop = handleStop;
-  }
+  // Create a Stream
+  const stream = await navigator.mediaDevices
+    .getUserMedia(constraints);
+
+  // Preview the source in a video element
+  videoElement.srcObject = stream;
+  videoElement.play();
+
+  // The image to display the screenshot
+  document.getElementById('screenshot-image').src = source.thumbnail.toDataURL()
+
+  // Create the Media Recorder
+  const options = { mimeType: 'video/webm; codecs=vp9' };
+  mediaRecorder = new MediaRecorder(stream, options);
+
+  // Register Event Handlers
+  mediaRecorder.ondataavailable = handleDataAvailable;
+  mediaRecorder.onstop = handleStop;
+
+  // The image to display the screenshot
+  /*desktopCapturer.getSources({ types: ['window', 'screen'] })
+  .then( sources => {
+      document.getElementById('screenshot-image').src = sources[0].thumbnail.toDataURL() // The image to display the screenshot
+  })*/
+}
 
 startBtn.onclick = e => {
   mediaRecorder.start();
@@ -71,7 +83,7 @@ startBtn.onclick = e => {
 stopBtn.onclick = e => {
   mediaRecorder.stop();
   startBtn.classList.remove('is-danger');
-  startBtn.innerText = 'Start';
+  startBtn.innerText = '강의 시작';
 };
 
 
@@ -91,7 +103,7 @@ async function handleStop(e) {
 
   const { filePath } = await dialog.showSaveDialog({
 
-    buttonLabel: 'Save video',
+    buttonLabel: '비디오 저장',
     defaultPath: `vid-${Date.now()}.avi`
   });
 
