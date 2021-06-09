@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>다아라 강의관리</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/amazon-cognito-auth.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+    <script src="js/amazon-cognito-identity.min.js"></script>
+</head>
+
+<body>
+    
+    <div class="wrap">
+        <div id="title-bar">
+            <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
+            <div id="title-bar-btns">
+                 <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_choice.html'">
+                 <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+                 <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+                 <img src = "img/Close.png" class="titleBTN" id="close-btn">
+            </div>
+       </div>
+        <div class="daAra-logo">
+            <img src="img/daARA logo 1.png"  onclick="location.href='daARA_choice.html'" style="max-width: 100%; height: auto; cursor:pointer;">
+
+        </div>
+        <div class="form-wrap" style="height: 230px;">
+            
+            <div class="margin1"></div>
+            <button class="submit" type="button" onclick="location.href='daARA_UpLoad.html'" style="margin-top: 20px">강의 추가</button>
+            <button class="submit" type="button" onclick="location.href='daARA_admin.html'" style="margin-top: 20px">수강생 추가/삭제</button>
+            
+        </div>
+    </div>
+    <script>
+        const {remote, ipcRenderer, BrowserWindow} = require('electron');
+        const app = require('electron').remote.app;
+        function init() { 
+            document.getElementById("min-btn").addEventListener("click", function (e) {
+                remote.BrowserWindow.getFocusedWindow().minimize(); 
+            });
+
+            document.getElementById("max-btn").addEventListener("click", function (e) {
+                remote.BrowserWindow.getFocusedWindow().maximize(); 
+            });
+
+            document.getElementById("close-btn").addEventListener("click", function (e) {
+            app.quit();
+            }); 
+        }; 
+
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                init(); 
+            }
+        };
+    </script>
+</body>
+
+</html>

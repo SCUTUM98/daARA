@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow-x: hidden;
+}
+
+video {
+  width: 90%;
+  height: 60%;
+  background-color: #f0f5f5;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  box-shadow: 2px 5px 10px #e8e8e8;
+}
+
+.is-text {
+  height: auto;
+  white-space: normal;
+}
+
+#saveProgressBar {
+  display: none;
+}
+
+.checkAttendance{
+  border-radius: 8px;
+  border-color: gray;
+  resize: none;
+  height: 400px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  height: 100%;
+}
+
+#chulCheckTable{
+  margin: auto;
+  width: 400px;
+  background-color: rgba(256, 256, 256, 0.9);
+  border-collapse:separate;
+    border-radius:10px;
+    -moz-border-radius:6px;
+    box-shadow: 2px 5px 10px #e8e8e8;
+}
+
+#emotionTable{
+  margin: auto;
+  resize: none;
+  width: 80%;
+  text-align: center;
+  background-color: rgba(256, 256, 256, 0.9);
+  border-collapse:separate;
+  border-radius:10px;
+  -moz-border-radius:6px;
+  box-shadow: 2px 5px 10px #e8e8e8;
+}
+
+.emotionTextArea{
+  font-size: 15px; 
+  margin: auto;
+  resize: none;
+  border: none;
+  width: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+}
+
+
+li{
+  list-style:none;
+}

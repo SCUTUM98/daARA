@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap');
+::-webkit-scrollbar {
+    display: none;
+  }
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Nanum Gothic Coding', monospace;
 }
 .wrap {
     height: 100%;
@@ -10,7 +14,6 @@
     background-position: center;
     background-size: cover;
     position: absolute;
-    
 }
 .daAra-logo{
     width: 380px;
@@ -32,6 +35,7 @@
     overflow: hidden;
     margin-top: 0;
     transition: .5s;
+    
 }
 
 .button-wrap {
@@ -88,6 +92,10 @@
     cursor: pointer;
     display: block;
     margin: auto;
+    color: #FFEEF0;
+    font-family: 'Jua', sans-serif;
+    font-size: 17px;
+    letter-spacing:2px;
     margin-top: 10px;
     background: linear-gradient(to right, #ff105f, #ffad06);
     border: 0;
@@ -113,10 +121,10 @@ span {
     bottom: 68px;
     position: absolute;
 }
-#login {
+#login, #lectureNameFrom {
     left: 50px;
 }
-#register {
+#register, #studentImgForm {
     left: 450px;
 }
 
@@ -157,8 +165,19 @@ span {
     height: 50px;
   
 }
+
+.submit2 {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background:  #ffad06;
+    border: 0;
+}
+
 .drop-zone{
-    width: 315px;
+    width: 370px;
     height: 200px;
     border: 4px solid #ffad06;
     font-size: 18px;
@@ -166,4 +185,35 @@ span {
     color: #ffad06;
     display: block;
     margin: auto;
+    margin-top: 20px;
 }
+
+    #title-bar {
+    -webkit-app-region: drag;
+    height: 30px; 
+    background-color: rgba(37, 36, 36, 0.8);
+    padding: none;
+    margin: 0px; 
+   }
+   
+   #title {
+    font-family: 'Jua', sans-serif;
+    color: #FFEEF0;
+    position: fixed;
+    top: 4px;
+    left: 6px; 
+   }
+   
+   #title-bar-btns {
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    right: 6px;
+   }
+
+   .titleBTN{
+    cursor:pointer;
+    margin-top: 7px;
+    width: 16px;
+    height: 16px;
+   }

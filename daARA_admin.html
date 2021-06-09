@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> 다아라 수강생 관리</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/amazon-cognito-auth.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-SDK_VERSION_NUMBER.js"></script>
+    <script src="js/amazon-cognito-identity.min.js"></script>
+    <script src="js/folderList.js"></script>
+    <script src="js/_config.js"></script>
+    <script src="js/daARA_UpLoad.js"></script>
+    <script src="js/daARA_Admin.js"></script>
+    <script src="script.js"></script>
+    <script type='text/javascript' src='js/_config.js'></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="wrap">
+        <div id="title-bar">
+            <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
+            <div id="title-bar-btns">
+                <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_SetClass.html'">
+                 <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+                 <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+                 <img src = "img/Close.png" class="titleBTN" id="close-btn">
+            </div>
+       </div>
+        <div class="daAra-logo">
+            <img src="img/daARA logo 1.png"  onclick="location.href='daARA_choice.html'" style="max-width: 100%; height: auto; cursor:pointer;">
+        </div>
+        
+        <div class="form-wrap" style="height: 500px;">
+            
+            <input type="text" class="submitErrMSG" id="uploaderrMSG" style="color: red;" readonly></textarea>
+            <div id="app"></div>
+            <form name="myform">
+                <div class="selectbox" id="selectbox">
+                    <label for="ex_select" id="showSelectedLecture">강의를 선택해주세요.</label>
+                    <select id="lecture_select" onclick="changedOption(this)"> </select>
+                </div>
+                <button class="submit" id="selectboxBTN" type="button" button onclick="test()">확인</button>
+                
+                <script>
+                    function getHtml(template) {
+                    return template.join('\n');
+                }
+                </script>
+                <form action="upload" id="upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" id="photoupload" style="display:none" multiple>
+                </form>
+                <button class="submit" type="button" button onclick="deleteall()">전 과목 삭제</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

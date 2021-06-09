@@ -1,29 +1,122 @@
 <!DOCTYPE html>
-<html>
+
+<!--수정수정수정수정수정-->
+
+<html id=imKING>
   <head>
     <meta charset="UTF-8" />
-    <title>🏴‍☠️ 다아라 강의 화면</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="styles/index.css" />
-    <script defer src="js/daARA_InLecture.js"></script>
+    <link rel="stylesheet" href="inLecture_syle.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <!-- Javascript SDKs-->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script src="js/amazon-cognito-auth.min.js"></script>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
+    <script src="js/amazon-cognito-identity.min.js"></script>  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <script type='text/javascript' src='js/_config.js'></script>
   </head>
-  <body class="content">
-    <h1>🏴‍☠️ 다아라 강의 화면</h1>
-    <video></video>
-    <img id = "screenshot-image"></img>
 
-    <button id="startBtn" class="button is-primary">강의 시작하기</button>
-    <button id="stopBtn" class="button is-warning">강의 종료하기</button>
+  <body>
+    <div id="title-bar">
+      <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
+        <div id="title-bar-btns">
+          <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_choice.html'">
+           <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+           <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+           <img src = "img/Close.png" class="titleBTN" id="close-btn">
+        </div>
+      </div>  
+    </div>
+    <div id="Page1" hidden>
+      <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+      <div class="wrap" style="background-color:aliceblue">
+        
+          <div class="daAra-logo">
+            <img src="img/daARA logo 1.png"  onclick="location.href='daARA_choice.html'" style="max-width: 100%; height: auto; cursor:pointer;">
+          </div>
+          <script>
+            
+          </script>
+          <div class="form-wrap" style="height: 230px;">
+              <div class="selectbox" name="selectbox">
+                  <label for="ex_select" id="showSelectedLecture">강의를 선택해주세요.</label>
+                  <select id="lecture_select" onclick="changedOption(this)"> </select>
+              </div>
+              <div class="margin1"></div>
+              <button class="submit" type="button" onclick="startLecture()" style="margin-top: 20px">다아라 시작하기</button>
+              <div class="margin1"></div>
+          </div>
+        </div>
+    </div>
 
-    <hr />
-    <img id = "screenshot-image"></img>
-    <progress id="saveProgressBar" class="progress is-small is-primary" max="100"></progress>
+    <div id="Page2" hidden>
+      <table style="margin: 5%;">
+        <tbody>
+          <tr>
+            <td style="text-align: center;">
+              <h1 style="font-size: 32px; vertical-align: bottom; margin-bottom:15px; font-family: 'Jua', sans-serif; cursor:pointer;" title="홈 화면으로" onclick="location.href='daARA_choice.html'">💻 다아라 강의중 화면 💻</h1>
+              <video id = "capture"></video> <!--1152x648-->
+              <button id="startBtn" class="button is-primary" style="text-align: left; font-size: 20px; ">출석 시작하기</button>
+              <button id="stopBtn" class="button is-warning" disabled="disabled" style="text-align: center;  font-size: 20px; " >출석 종료하기</button>
+              <button id="videoSelectBtn" class="button is-text" style="text-align: right; font-size: 20px; ">강의화면 선택하기</button>
+            </td>
+            <td rowspan="2">
+              <table class="table" id="chulCheckTable" style="width:560px">
+                <tbody>
+                  <tr style="font-family: 'Noto Sans KR', sans-serif; font-size: 25px; font-weight: 400;">
+                    <td width="380px" align="center" style="color: seagreen;">출석 확인</td>
+                    <td width="380px" align="center"  style="color: orange;">미출석</td>
+                  </tr>
+                  <tr>
+                    <td width="380px" height="600px" align="center"><textarea type="text" class="checkAttendance" id="checkedFaces" style="color: seagreen; resize: none;" readonly></textarea></td>
+                    <td width="2000px" height="600px" align="center"><ul id="uncheckedFaces" style="columns:2;"></ul></td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <table class="table" id="emotionTable" style="margin-top:10px; width:90%;">
+                <thead>
+                  <tr>  
+                    <th style="text-align: center;">상위 감정</th>
+                  </tr>
+                </thead>
+                <tr style="text-align: center;">
+                  <td width="768px"><textarea type="text" class="emotionTextArea" id="firstEmotion" style="font-family: 'Noto Sans KR', sans-serif; background-color: rgba(256, 256, 256, 0.2);" readonly></textarea></td>
+                </tr>
+                <tr style="text-align: center;">
+                  <td width="768px"><textarea type="text" class="emotionTextArea" id="secondEmotion" style="font-size: 15px; text-align: center; background-color: rgba(256, 256, 256, 0.2);" readonly></textarea></td>
+                </tr>
+                <tr style="text-align: center;">
+                  <td width="768px"><textarea type="text" class="emotionTextArea" id="thirdEmotion" style="font-size: 15px; text-align: center; background-color: rgba(256, 256, 256, 0.2);" readonly></textarea></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="file" id="resultFileDownload" style="position:absolute; top:-100px;"/>
 
-    <button id="videoSelectBtn" class="button is-text">
-    강의화면 선택하기
-    </button>
+      <table id="wholeStudentAttendenceCheckTable" hidden>
+        <tr>
+          <th>일자</th>
+          <th>이름</th>
+          <th>출석여부</th>
+        </tr>
+        <tbody id="studentAttendenceCheckTable">
+        </tbody>
+      </table>
+    </div>
   </body>
+  <script src="js/daARA_InLecture.js"></script>
 </html>

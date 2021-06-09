@@ -1,37 +1,46 @@
 <html>
-    <head>
-        <title>다아라 강의선택</title>
-        <link rel="stylesheet" href="style.css">
-        <!-- Javascript SDKs-->
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
-        <script src="js/amazon-cognito-auth.min.js"></script>
-        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
-        <script src="js/amazon-cognito-identity.min.js"></script>  
-        <script src="js/config.js"></script>
-    </head>
 
-    <body>
-        <div class="wrap">
-            <div class="daAra-logo">
-                <img src="img/daARA logo 1.png" style="max-width: 100%; height: auto;">
+<head>
+    <meta charset="utf-8">
+    <title>다아라 강의선택</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <!-- Javascript SDKs-->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/amazon-cognito-auth.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+    <script src="js/amazon-cognito-identity.min.js"></script>
+</head>
 
+<body>
+    
+    <div class="wrap">
+        <div id="title-bar">
+            <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
+            <div id="title-bar-btns">
+                 <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+                 <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+                 <img src = "img/Close.png" class="titleBTN" id="close-btn">
             </div>
-            <div class="form-wrap" style="height: 230px;">
-                <div class="selectbox" name="selectbox"> 
-                    <label for="ex_select">강의를 선택해주세요.</label> 
-                    <select id="ex_select"> 
-                        <option selected>강의를 선택해주세요.</option>
-                         <option>자료구조와 c++프로그래밍</option> 
-                         <option>JAVA와 객체지향 프로그래밍</option> 
-                         <option>전준휘바보</option >
-                    </select> 
-                </div>
-                <div class="margin1"></div>
-                <button class="submit" type="button" onclick="location.href='daARA_UpLoad.html'" style="margin-top: 20px">강의 추가하기</button>
-                <div class="margin1"></div>
-                <button class="submit" type="button" onclick="location.href='daARA_InLecture.html'" style="margin-top: 20px">다아라 시작하기</button>
-            </div>
+       </div>
+        <div class="daAra-logo">
+            <img src="img/daARA logo 1.png" style="max-width: 100%; height: auto; cursor:pointer; -webkit-app-region: no-drag;">
+
         </div>
-        <script src="daARA_screenCapture.js"> </script>
-    </body>
+        <script>
+           
+        </script>
+        <div class="form-wrap" style="height: 230px;">
+            <div class="margin1"></div>
+            <button class="submit" type="button" onclick="location.href='daARA_SetClass.html'"
+                style="margin-top: 20px;-webkit-app-region: no-drag;">강의 관리</button>
+            <button class="submit" type="button" onclick="startLecture()" style="margin-top: 20px;-webkit-app-region: no-drag;">강의 시작하기</button>
+            <div class="margin1"></div>
+        </div>
+    </div>
+  <script src="js/daARA_choice.js"> </script>
+</body>
+
 </html>
