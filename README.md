@@ -31,7 +31,7 @@ DaARA
 
 이미 강의가 업로드 되어 있다면 이 단계를 뛰어 넘어도 됩니다.
 
-   1. daARA PROJECT file에 다아라 출석 체크 프로그럄 실행
+   1. daARA PROJECT file에 다아라 출석 체크 프로그램 실행
 
       ![daARA PROJECT file](https://daara-reference.s3.ap-northeast-2.amazonaws.com/333.PNG)
 
