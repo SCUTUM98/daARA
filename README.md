@@ -13,6 +13,8 @@ DaARA
 
 ## Befor You Begin
 
+이미 학생들의 이미지가 준비되어 있고, daARA PROJECT 프로그램이 설치되어 있다면 이 단계는 뛰어 넘어도 됩니다.
+
    1. 학생들의 이미지 준비
 
    2. [daARA PROJECT download](http://ec2-3-34-3-126.ap-northeast-2.compute.amazonaws.com/)
@@ -26,6 +28,8 @@ DaARA
 
 
 ## Prepare
+
+이미 강의가 업로드 되어 있다면 이 단계를 뛰어 넘어도 됩니다.
 
    1. daARA PROJECT file에 다아라 출석 체크 프로그럄 실행
 
@@ -72,6 +76,7 @@ DaARA
 ## Start DaARA Service
 
 
+   1. daARA 
 
 
 
