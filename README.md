@@ -112,4 +112,3 @@ daARA Service is an automatic attendance check project for educator.
 
 #### 4. Award Details
 
-
