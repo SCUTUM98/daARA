@@ -7,7 +7,7 @@ daARA Service is an automatic attendance check project for educator.
    - [1. Before You Begin](#1-before-you-begin)
    - [2. Prepare](#2-prepare)
    - [3. Start DaARA Service](#3-start-daara-service)
-   - [3. Award Details](#4-award-details)
+   - [4. Award Details](#4-award-details)
 
 ***
 
