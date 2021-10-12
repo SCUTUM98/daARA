@@ -1,17 +1,17 @@
-DaARA
-=====
+# DaARA
 
-![daARA](https://daara-reference.s3.ap-northeast-2.amazonaws.com/000.PNG)
+daARA Service is an automatic attendance check project for educator.
 
-> Befor You Begin
-> 
-> Prepare
-> 
-> Start DaARA Service
+***
+#### [목    차]
+   - [1. Before You Begin](#1-before-you-begin)
+   - [2. Prepare](#2-prepare)
+   - [3. Start DaARA Service](#3-start-daara-service)
+   - [4. Award Details](#4-award-details)
 
+***
 
-
-## Befor You Begin
+#### 1. Before You Begin
 
 이미 학생들의 이미지가 준비되어 있고, daARA PROJECT 프로그램이 설치되어 있다면 이 단계는 뛰어 넘어도 됩니다.
 
@@ -25,9 +25,9 @@ DaARA
 
       ![Unzip](https://daara-reference.s3.ap-northeast-2.amazonaws.com/222.PNG)
 
+***
 
-
-## Prepare
+#### 2. Prepare
 
 이미 강의가 업로드 되어 있다면 이 단계를 뛰어 넘어도 됩니다.
 
@@ -71,9 +71,8 @@ DaARA
 
       ![daARA 이미지 추가](https://daara-reference.s3.ap-northeast-2.amazonaws.com/111111.PNG)
 
-
-
-## Start DaARA Service
+***
+#### 3. Start DaARA Service
 
 이 단계에서는 이미 윗 단계가 모두 완벽하게 클리어 된 상태에서 진행해야 됩니다.
 
@@ -108,3 +107,9 @@ DaARA
       * **강의 종료 버튼을 누르면 엑셀을 다운로드 받을 수 있습니다.**
 
          ![daARA 강의 종료](https://daara-reference.s3.ap-northeast-2.amazonaws.com/eee.PNG)
+
+***
+
+#### 4. Award Details
+
+
