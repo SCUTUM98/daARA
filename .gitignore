@@ -1,4 +1,5 @@
-dist/
+/dist
+/browser
 browser.zip
 vscode/
 assets/
@@ -12,7 +13,9 @@ _config.js
 amazon-*.js
 cognito*.js
 desktop.ini
+yarn-error.log
 js/amazon-cognito-identity.min.js.map
 js/aws-cognito-sdk.min.js
 js/popper.min.js
 js/temp.js
+/다아라출석체크-win32-x64
