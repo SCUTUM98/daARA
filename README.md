@@ -112,4 +112,5 @@ daARA Service is an automatic attendance check project for educator.
 
 #### 4. Award Details
 
+  sw인재 페스티벌 본선 진출 성공
 
