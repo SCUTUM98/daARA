@@ -3,17 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>다아라 강의관리</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1003.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/amazon-cognito-auth.min.js"></script>
+    <script src="js/daARA_Admin.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
     <script src="js/amazon-cognito-identity.min.js"></script>
 </head>
 
 <body>
-    
     <div class="wrap">
         <div id="title-bar">
             <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
@@ -31,9 +32,8 @@
         <div class="form-wrap" style="height: 230px;">
             
             <div class="margin1"></div>
-            <button class="submit" type="button" onclick="location.href='daARA_UpLoad.html'" style="margin-top: 20px">강의 추가</button>
-            <button class="submit" type="button" onclick="location.href='daARA_admin.html'" style="margin-top: 20px">수강생 추가/삭제</button>
-            
+            <button class="submit" type="button" onclick="location.href='daARA_UpLoad.html'" style="margin-top: 20px">강의 생성</button>
+            <button class="submit" type="button" onclick="location.href='daARA_admin.html'" style="margin-top: 20px">수강생 추가하기</button>            
         </div>
     </div>
     <script>

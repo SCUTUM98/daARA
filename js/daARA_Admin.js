@@ -14,6 +14,7 @@ function test() {
     document.getElementById('selectbox').style.display='none';
     document.getElementById('selectboxBTN').style.display='none';
     autoviewAlbum(selectedValue); // 강의 선택하면 수강생 이미지 나열해야함
+    submitErrMSG.style.color = 'black';
     submitErrMSG.value = selectedValue + "(을)를 선택하였습니다.";
 }
 function addphoto(srcList, photokey) {
@@ -59,7 +60,8 @@ async function getLectureFromS3()
         }
       }
     }
-    if(mySet.size==0) location.reload();
+    if(mySet.size != 0) checkLoaded(1);
+    else checkLoaded(0);
     document.getElementById('Page').style.display='block';
   }).promise();
   
@@ -75,6 +77,23 @@ async function getLectureFromS3()
     op.value = subjectarr[i];
     op.text = subjectarr[i];
     select.appendChild(op);
+  }
+}
+
+function checkLoaded(flag)
+{
+  if(flag == 1)
+  {
+    document.getElementById("load").style.display = "none";
+  }
+  else
+  {
+    for(var i=0; i<20; i++)
+    {
+      s3.listObjects(bucketParams)
+    }
+    dialog.showErrorBox('', '생성된 강의가 없습니다! 강의를 등록해주세요.')
+    location.href='daARA_choice.html';
   }
 }
 

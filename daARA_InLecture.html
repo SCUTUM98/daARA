@@ -5,13 +5,14 @@
 <html id=imKING>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="inLecture_syle.css">
+    <link rel="stylesheet" href="styles/inLecture_syle.css">
     <link rel="stylesheet" href="styles/index.css">
     <!-- Javascript SDKs-->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
     <script src="js/amazon-cognito-auth.min.js"></script>
 
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1003.0.min.js"></script>
     <script src="js/amazon-cognito-identity.min.js"></script>  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
     <!--폰트-->
@@ -23,6 +24,9 @@
   </head>
 
   <body>
+    <div id="load">
+      <img src="img/loading_dots.gif" alt="loading" style="width: 120px;">
+    </div>
     <div id="title-bar">
       <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
         <div id="title-bar-btns">
@@ -34,7 +38,7 @@
       </div>  
     </div>
     <div id="Page1" hidden>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="styles/style.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
       <div class="wrap" style="background-color:aliceblue">

@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap');
+::-webkit-scrollbar {
+    display: none;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+.wrap {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/background.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.daAra-logo{
+    width: 380px;
+    height: fit-content;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.form-wrap {
+    width: 380px;
+    height: 290px;
+    position: relative;
+    margin: 13% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    margin-top: 0;
+    transition: .5s;
+    
+}
+
+.button-wrap {
+    width: 230px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 600px 9px #fcae8f;
+    border-radius: 30px;
+}
+.togglebtn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+}
+.social-icons img {
+    width: 30px ;
+    cursor: pointer;
+}
+.input-group {
+    top: 100px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    color: #FFEEF0;
+    font-family: 'Jua', sans-serif;
+    font-size: 17px;
+    letter-spacing:2px;
+    margin-top: 10px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.submitErrMSG{
+    width: 95%;
+    margin-top:8px;
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+    margin:auto;
+    display: block;
+    text-align: center;
+    background: transparent;
+    border: 0;
+    outline: none;
+}
+.checkbox {
+    margin: 30px 10px 30px 0;
+}
+#upload_text{
+    font-family: 'Jua', sans-serif;
+    font-size: 18px;
+}
+
+span {
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+#login, #lectureNameFrom {
+    left: 50px;
+}
+#register, #studentImgForm {
+    left: 450px;
+}
+
+.selectbox { 
+    position: relative;
+    padding-left: 20px;
+    width: 360px; 
+    height: 40px; 
+    line-height: 40px; 
+    background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%; 
+    border: 1px solid #999; z-index: 1; 
+}
+
+.selectbox label { 
+    position: absolute; 
+    top: 0px; left: 5px; height: 40px; 
+    line-height: 40px; color: #999; 
+    z-index: -1; 
+}
+
+.selectbox select { 
+    width: 100%; height: 40px; 
+    line-height: 40px; 
+    font-family: inherit; border: 0; 
+    opacity: 0; filter:alpha(opacity=0); 
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+    -moz-appearance: none; 
+    appearance: none; 
+}
+.margin1 {
+    width: 380px;
+    height: 10px;
+  
+}
+
+.margin2 {
+    width: 380px;
+    height: 50px;
+  
+}
+
+.submit2 {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background:  #ffad06;
+    border: 0;
+}
+
+.drop-zone{
+    width: 370px;
+    height: 200px;
+    border: 4px solid #ffad06;
+    font-size: 18px;
+    text-align: center;
+    color: #ffad06;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+    #title-bar {
+    -webkit-app-region: drag;
+    height: 30px; 
+    background-color: rgba(37, 36, 36, 0.8);
+    padding: none;
+    margin: 0px; 
+   }
+   
+   #title {
+    font-family: 'Jua', sans-serif;
+    color: #FFEEF0;
+    position: fixed;
+    top: 4px;
+    left: 6px; 
+   }
+   
+   #title-bar-btns {
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    right: 6px;
+   }
+
+   .titleBTN{
+    cursor:pointer;
+    margin-top: 7px;
+    width: 16px;
+    height: 16px;
+   }
+
+   #firstIntoTheStars{
+       opacity:0;
+   }
+
+   #load {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.8;
+    background: white;
+    z-index: 99;
+    text-align: center;
+  }
+  
+  #load > img {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    z-index: 100;
+  }

@@ -53,6 +53,9 @@ const config = new AWS.Config({
   secretAccessKey: SECRET_ACCESS_KEY,
   region: REGION
 })
+var bucketParams = {
+  Bucket : 'public-daara-test',
+}
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //오늘의 날짜
@@ -99,32 +102,30 @@ async function getLectureFromS3()
   const AWS = require('aws-sdk')
   AWS.config.update({region:'ap-northeast-2'});
 
-  var bucketParams = {
-    Bucket : 'public-daara-test',
-  }
+  
   var mySet = new Set();
 
-  await s3.listObjects(bucketParams, function(err, data) {
-    if(err)
-    {
-      if (err.message == "Cannot convert undefined or null to object") {
-        location.reload();
-      }
-      console.log(err.message);
+ 
+await s3.listObjects(bucketParams, function(err, data) {
+  if(err)
+  {
+    if (err.message == "Cannot convert undefined or null to object") {
+      location.reload();
     }
-    for(var i = 0; i < Object.keys(data["Contents"]).length; i++){
-      for(var j = 0; j < data["Contents"][i]["Key"].length; j++){
-        if(data["Contents"][i]["Key"][j] == "/"){
-          mySet.add(data["Contents"][i]["Key"].substring(0, j))
-          break
-        }
+    console.log(err.message);
+  }
+  for(var i = 0; i < Object.keys(data["Contents"]).length; i++){
+    for(var j = 0; j < data["Contents"][i]["Key"].length; j++){
+      if(data["Contents"][i]["Key"][j] == "/"){
+        mySet.add(data["Contents"][i]["Key"].substring(0, j))
+        break
       }
     }
-    if(mySet.size==0) location.reload();
-    show('Page1', 'Page2');
+  }
   }).promise();
-  
-  
+
+  if(mySet.size != 0) checkLoaded(1);
+  else checkLoaded(0);
 
   for(const item of mySet){
     if(item==undefined) continue;
@@ -138,6 +139,24 @@ async function getLectureFromS3()
     op.value = subjectarr[i];
     op.text = subjectarr[i];
     select.appendChild(op);
+  }
+}
+
+function checkLoaded(flag)
+{
+  if(flag == 1)
+  {
+    document.getElementById("load").style.display = "none";
+    show('Page1', 'Page2');
+  }
+  else
+  {
+    for(var i=0; i<20; i++)
+    {
+      s3.listObjects(bucketParams)
+    }
+    dialog.showErrorBox('', '생성된 강의가 없습니다! 강의를 등록해주세요.')
+    location.href='daARA_choice.html';
   }
 }
 
