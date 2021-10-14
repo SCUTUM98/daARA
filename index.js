@@ -28,8 +28,8 @@ app.on('ready', () =>
         icon: path.join(__dirname, '/img/daARA ICON.png')
     });
     //mainWindow.loadURL(`file://${__dirname}/daARA_InLecture.html`);
-    //mainWindow.loadURL(`file://${__dirname}/daARA_choice.html`);
-    mainWindow.loadURL(`file://${__dirname}/daARA_LoginForm.html`);
+    mainWindow.loadURL(`file://${__dirname}/daARA_choice.html`);
+    //mainWindow.loadURL(`file://${__dirname}/daARA_LoginForm.html`);
     mainWindow.on('closed', onClosed);
 });
 
