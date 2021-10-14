@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
     <!-- Javascript SDKs-->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/amazon-cognito-auth.min.js"></script>
@@ -15,32 +15,34 @@
 </head>
 
 <body>
-    
+
     <div class="wrap">
         <div id="title-bar">
             <div id="title">daARA</div>
             <div id="title-bar-btns">
-                 <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
-                 <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
-                 <img src = "img/Close.png" class="titleBTN" id="close-btn">
+                <img src="img/Minimize.png" class="titleBTN" id="min-btn">
+                <img src="img/Maximize.png" class="titleBTN" id="max-btn">
+                <img src="img/Close.png" class="titleBTN" id="close-btn">
             </div>
-       </div>
+        </div>
         <div class="daAra-logo">
-            <img src="img/daARA logo 1.png" onclick="goto_daARA_main()" style="max-width: 100%; height: auto; cursor:pointer; -webkit-app-region: no-drag;">
+            <img src="img/daARA logo 1.png" onclick="goto_daARA_main()"
+                style="max-width: 100%; height: auto; cursor:pointer; -webkit-app-region: no-drag;">
 
         </div>
         <script>
-           
+
         </script>
         <div class="form-wrap" style="height: 230px;">
             <div class="margin1"></div>
             <button class="submit" type="button" onclick="location.href='daARA_SetClass.html'"
                 style="margin-top: 20px;-webkit-app-region: no-drag;">강의 관리</button>
-            <button class="submit" type="button" onclick="startLecture()" style="margin-top: 20px;-webkit-app-region: no-drag;">강의 시작하기</button>
+            <button class="submit" type="button" onclick="startLecture()"
+                style="margin-top: 20px;-webkit-app-region: no-drag;">강의 시작하기</button>
             <div class="margin1"></div>
         </div>
     </div>
-  <script src="js/daARA_choice.js"> </script>
+    <script src="js/daARA_choice.js"> </script>
 </body>
 
 </html>

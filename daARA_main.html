@@ -7,12 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/daARA_main_style.css">
 </head>
 
 <body>
+    <div id="title-bar">
+        <div id="title">daARA</div>
+        <div id="title-bar-btns">
+            <img src="img/Minimize.png" class="titleBTN" id="min-btn">
+            <img src="img/Maximize.png" class="titleBTN" id="max-btn">
+            <img src="img/Close.png" class="titleBTN" id="close-btn">
+        </div>
+    </div>
 
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
@@ -21,29 +28,26 @@
                     style="background-image: url(img/daARA-ICON.ico); background-size: 90%;"></a>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="#">Home 1</a>
+                                <a href="#">강의 추가하기</a>
                             </li>
                             <li>
-                                <a href="#">Home 2</a>
+                                <a href="#">학생 추가하기</a>
                             </li>
                             <li>
-                                <a href="#">Home 3</a>
+                                <a href="#">학생 관리하기</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
+                   
+                    <!-- <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
+                            class="dropdown-toggle">강의 시작하기</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="#">Page 1</a>
+                                <a href="#">로그 파일 확인</a>
                             </li>
                             <li>
                                 <a href="#">Page 2</a>
@@ -52,12 +56,15 @@
                                 <a href="#">Page 3</a>
                             </li>
                         </ul>
+                    </li> -->
+                    <li>
+                        <a href="#">강의 시작하기</a>
                     </li>
                     <li>
-                        <a href="#">Portfolio</a>
+                        <a href="#">사용법</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">About daARA</a>
                     </li>
                 </ul>
 
@@ -78,7 +85,7 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -108,7 +115,7 @@
                         </ul>
                     </div>
                 </div>
-            </nav>
+            </nav> -->
 
             <h2 class="mb-4">Sidebar #01</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -127,7 +134,7 @@
     <!-- Insert this line above script imports  -->
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <script src="js/daARA_main_jquery.min.js"></script>
-    //  Insert this line after script imports
+    <!-- Insert this line after script imports -->
     <script>if (window.module) module = window.module;</script>
 
     <script src="js/daARA_main_popper.js"></script>
