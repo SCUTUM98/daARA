@@ -109,7 +109,7 @@ function loginButton()
         {
             var accessToken = result.getAccessToken().getJwtToken();
             console.log(accessToken);	
-            location.href='daARA_choice.html'
+            location.href='daARA_main.html'
         },
 
         onFailure: function(err) 
