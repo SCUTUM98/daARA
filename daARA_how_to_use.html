@@ -12,12 +12,75 @@
   <!-- youtube.js 연결 -->
   <script src="./js/youtube.js"></script>
 
-  <link rel="stylesheet" href="./styles/youtube.css" />   <!-- CSS 파일 연결 -->
+  <!-- CSS 파일 연결 -->
+  <link rel="stylesheet" href="./styles/youtube.css" /> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/daARA_main_style.css">
 
   <title>HOW TO USE</title>
 </head>
+
 <body>
-  <div id="root">화면</div>
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="p-4 pt-5">
+            <a href="#" class="img logo rounded-circle mb-5"
+                style="background-image: url(img/daARA-ICON.ico); background-size: 90%;"></a>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="AddLecture()">강의 추가하기</a>
+                        </li>
+                        <li>
+                            <a href="#">학생 추가하기</a>
+                        </li>
+                        <li>
+                            <a href="#">학생 관리하기</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">강의 시작하기</a>
+                </li>
+                <li>
+                    <a href="#">사용법</a>
+                </li>
+                <li>
+                    <a href="#">About daARA</a>
+                </li>
+            </ul>
+            <div class="footer"> 
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                    is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                        target="_blank">Colorlib.com</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content  -->
+    <!-- <div id="content" class="p-4 p-md-5"> -->
+    <div id="content" style="background-color: antiquewhite;">
+        <img src="img/background.jpg" width= 100% height= 100%>
+    </div>
+  </div>
+
+  
+  <!-- Insert this line above script imports  -->
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <script src="js/daARA_main_jquery.min.js"></script>
+  <!-- Insert this line after script imports -->
+  <script>if (window.module) module = window.module;</script>
+
+  <script src="js/daARA_main_popper.js"></script>
+  <script src="js/daARA_main_bootstrap.min.js"></script>
+  <script src="js/daARA_main.js"></script>
+
   <!-- YOUTUBE VIDEO -->
   <section class="youtube">
     <div class="youtube__area">
