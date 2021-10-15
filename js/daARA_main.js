@@ -1,4 +1,4 @@
-// const app = require('electron').remote.app;
+const app = require('electron').remote.app;
 //---------------------------------------------------------------------------------------------------------Electron 관련 변수
 
 
