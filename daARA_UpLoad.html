@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>파일 업로드</title>
+    <title>daARA 강의 생성</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <link rel="stylesheet" href="styles/style.css">
     <!-- Javascript SDKs-->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
@@ -15,67 +18,144 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/daARA_main_style.css">
     <script>
         function getHtml(template) {
-           return template.join('\n');
+            return template.join('\n');
         }
         listAlbums();
-       
-     </script>
-    <meta charset="UTF-8">
-    
+
+    </script>
 </head>
-    <body>
-        <div class="wrap">
-            <div id="title-bar">
-                <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
-                <div id="title-bar-btns">
-                    <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_SetClass.html'">
-                     <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
-                     <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
-                     <img src = "img/Close.png" class="titleBTN" id="close-btn">
+
+<body>
+    <div id="title-bar">
+        <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
+          <div id="title-bar-btns">
+            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_choice.html'">
+             <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+             <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+             <img src = "img/Close.png" class="titleBTN" id="close-btn">
+          </div>
+        </div>  
+      </div>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                <a href="#" class="img logo rounded-circle mb-5"
+                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;" onclick="location.href='daARA_main.html'"></a>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#" onclick="AddLecture()">강의 추가하기</a>
+                            </li>
+                            <li>
+                                <a href="#">학생 추가하기</a>
+                            </li>
+                            <li>
+                                <a href="#">학생 관리하기</a>
+                            </li>
+                        </ul>
+                    </li>
+                   
+                    <!-- <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">강의 시작하기</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">로그 파일 확인</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="#">강의 시작하기</a>
+                    </li>
+                    <li>
+                        <a href="#">사용법</a>
+                    </li>
+                    <li>
+                        <a href="#">About daARA</a>
+                    </li>
+                </ul>
+
+                <div class="footer" style="background-color: rgb(29, 25, 25);">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                            target="_blank">Colorlib.com</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
                 </div>
-           </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <!-- <div id="content" class="p-4 p-md-5"> -->
+        <div id="content">
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav> -->
+
             <div class="daAra-logo">
                 <img src="img/daARA logo 1.png"  onclick="location.href='daARA_choice.html'" style="max-width: 100%; height: auto; cursor:pointer;">
             </div>
             <div class="form-wrap" style="height: 500px;">
                 <div id="app"></div>
             </div>
-            
-    <script>
-             
-        
-        function successUpload()
-        {
-            document.getElementById("uploadMSG").style.color = 'green';
-            document.getElementById("uploadMSG").value = "성공적으로 업로드 되었습니다."
-        } 
-        (function() {            
-            var $file = document.getElementById("file")
-            var dropZone = document.querySelector(".drop-zone")
-            var toggleClass = function(className) {
-                
-                console.log("current event: " + className)
+        </div>
+    </div>
 
-                var list = ["dragenter", "dragleave", "dragover", "drop"]
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="js/daARA_main_jquery.min.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
 
-                for (var i = 0; i < list.length; i++) {
-                    if (className === list[i]) {
-                        dropZone.classList.add("drop-zone-" + list[i])
-                    } else {
-                        dropZone.classList.remove("drop-zone-" + list[i])
-                    }
-                }
-            }        
-            var selectFile = function(files) {
-                // input file 영역에 드랍된 파일들로 대체
-                $file.files = files
-                showFiles($file.files)
-            }         
-         })()
-    </script>
-
+    <script src="js/daARA_main_popper.js"></script>
+    <script src="js/daARA_main_bootstrap.min.js"></script>
+    <script src="js/daARA_main.js"></script>
 </body>
-</html>
 
+</html>

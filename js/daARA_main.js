@@ -1,5 +1,4 @@
-const {remote, ipcRenderer, BrowserWindow} = require('electron');
-const app = require('electron').remote.app;
+// const app = require('electron').remote.app;
 //---------------------------------------------------------------------------------------------------------Electron 관련 변수
 
 
@@ -56,3 +55,8 @@ document.onreadystatechange = function () {
 
 })(jQuery);
 //------------------------------------------------------
+
+function AddLecture()
+{
+    location.href='./daARA_UpLoad.html'
+}
