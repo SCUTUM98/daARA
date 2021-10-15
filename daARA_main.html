@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sidebar 01</title>
+    <title>daARA Main</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,13 +13,15 @@
 
 <body>
     <div id="title-bar">
-        <div id="title">daARA</div>
-        <div id="title-bar-btns">
-            <img src="img/Minimize.png" class="titleBTN" id="min-btn">
-            <img src="img/Maximize.png" class="titleBTN" id="max-btn">
-            <img src="img/Close.png" class="titleBTN" id="close-btn">
-        </div>
-    </div>
+        <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
+          <div id="title-bar-btns">
+            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_choice.html'">
+             <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+             <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+             <img src = "img/Close.png" class="titleBTN" id="close-btn">
+          </div>
+        </div>  
+      </div>
 
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
@@ -31,7 +33,7 @@
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="#">강의 추가하기</a>
+                                <a href="#" onclick="AddLecture()">강의 추가하기</a>
                             </li>
                             <li>
                                 <a href="#">학생 추가하기</a>
@@ -68,7 +70,7 @@
                     </li>
                 </ul>
 
-                <div class="footer">
+                <div class="footer"> 
                     <p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;

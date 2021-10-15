@@ -40,7 +40,7 @@ document.onreadystatechange = function () {
 function goto_daARA_main()
 {
     main_img_click_cnt++;
-    console.log(main_img_click_cnt++);
+    console.log(main_img_click_cnt);
     if(main_img_click_cnt >= 5)
     {
         location.href='daARA_main.html';
