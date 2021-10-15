@@ -1,4 +1,4 @@
-//const app = require('electron').remote.app;
+const app = require('electron').remote.app;
 //---------------------------------------------------------------------------------------------------------Electron 관련 변수
 
 
@@ -64,4 +64,9 @@ function linkTOdaARA_UpLoad()
 function linkTIdaARA_admin()
 {
     location.href='./daARA_admin.html'
+}
+
+function lintTOdaATA_InLecture()
+{
+    location.href='./daARA_InLecture.html'
 }
