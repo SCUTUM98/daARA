@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>HOW TO USE</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">    
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/daARA_main_style.css">
+  <link rel="stylesheet" href="styles/daARA_how_to_use_style.css">
 
   <!--Swiper-->
   <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
@@ -11,13 +17,154 @@
 
   <!-- youtube.js 연결 -->
   <script src="./js/youtube.js"></script>
-
   <link rel="stylesheet" href="./styles/youtube.css" />   <!-- CSS 파일 연결 -->
 
-  <title>HOW TO USE</title>
+  
 </head>
 <body>
-  <div id="root">화면</div>
+  
+    <div id="title-bar">
+        <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
+          <div id="title-bar-btns">
+            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_choice.html'">
+             <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+             <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+             <img src = "img/Close.png" class="titleBTN" id="close-btn">
+          </div>
+        </div>  
+      </div>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                <a href="#" class="img logo rounded-circle mb-5"
+                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;"></a>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#" onclick="AddLecture()">강의 추가하기</a>
+                            </li>
+                            <li>
+                                <a href="#">학생 추가하기</a>
+                            </li>
+                            <li>
+                                <a href="#">학생 관리하기</a>
+                            </li>
+                        </ul>
+                    </li>
+                   
+                    <!-- <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">강의 시작하기</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">로그 파일 확인</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="#">강의 시작하기</a>
+                    </li>
+                    <li>
+                        <a href="#">사용법</a>
+                    </li>
+                    <li>
+                        <a href="#">About daARA</a>
+                    </li>
+                </ul>
+
+                <div class="footer"> 
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                            target="_blank">Colorlib.com</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <!-- <div id="content" class="p-4 p-md-5"> -->
+        <div id="content" style="background-color: antiquewhite;">
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav> -->
+            <div id="root" style = 'margin-left : 100px; color : white; padding-top : 90px;'>
+              <text id= 'LevelName'>Installation
+                <P id = 'Description'>daARA Github를 통해 daARA PROJECT 프로그램을 설치합니다.</P>
+                <p>
+                  <a href = 'https://github.com/BUZZINGPolarBear/daARA/blob/main/README.md' id = 'GoGithub'>Github --daARA PROJECT</a>
+                </p>
+              </text>
+
+              <text id = 'LevelName'>Usage
+                <p id = 'Description'>1. 출석 체크를 적용할 강의 혹은 이미지를 준비합니다.</P>
+                <p id = 'Description'>  2. 다운받은 daARA PROJECT File에서 다아라 출석 체크 프로그램을 실행합니다.</p>
+                <p id = 'Description'>    3. 회원가입을 한 후 로그인을 한 후 프로그램 사용이 가능합니다.</p>
+                <p id = 'Description'>  4. 강의관리 → 강의 추가하기를 통해 강의를 추가하고 해당 강의를 수강하는 학생들을 추가합니다.</p>
+                <p id = 'Description'>  5. 강의 시작하기 탭에서 강의를 시작합니다.</p>
+            </text>
+            
+            
+            
+            </div>
+
+            <img src="img/background.jpg" width= 100% height= 100%>
+        </div>
+    </div>
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="js/daARA_main_jquery.min.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+
+    <script src="js/daARA_main_popper.js"></script>
+    <script src="js/daARA_main_bootstrap.min.js"></script>
+    <script src="js/daARA_main.js"></script>
+
+
+  
   <!-- YOUTUBE VIDEO -->
   <section class="youtube">
     <div class="youtube__area">

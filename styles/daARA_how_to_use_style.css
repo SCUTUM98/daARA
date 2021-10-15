@@ -1,0 +1,16 @@
+#LevelName {
+  font-size : 40px;
+  border-bottom: solid 5px rgb(218, 108, 35);
+  font-weight : bold;
+}
+
+#Description {
+  font-size : 20px;
+  margin-top : 10px;
+  font-weight: 500px;
+}
+#GoGithub {
+  background-color: white;
+  color : black;
+  
+}
