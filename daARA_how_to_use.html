@@ -22,17 +22,14 @@
   <link rel="stylesheet" href="./styles/youtube.css" /> 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/daARA_main_style.css">
-
-
-  
 </head>
 
 <body>
   
     <div id="title-bar">
-        <div id="title" onclick="location.href='daARA_choice.html'">daARA</div>
+        <div id="title" onclick="location.href='daARA_main.html'">daARA</div>
           <div id="title-bar-btns">
-            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_choice.html'">
+            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_main.html'">
              <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
              <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
              <img src = "img/Close.png" class="titleBTN" id="close-btn">
@@ -44,7 +41,7 @@
         <nav id="sidebar">
             <div class="p-4 pt-5">
                 <a href="#" class="img logo rounded-circle mb-5"
-                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;"></a>
+                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;" onclick="location.href='daARA_main.html'"></a>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
@@ -103,7 +100,7 @@
 
         <!-- Page Content  -->
         <!-- <div id="content" class="p-4 p-md-5"> -->
-        <div id="content" style="background-color: antiquewhite;">
+        <div id="content" style="background-color: #36393e; background-image: none;">
             <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
@@ -143,7 +140,7 @@
                 </p>
               </text>
 
-              <text id = 'LevelName'>Usage
+              <text id = 'LevelName'> Usage
                 <p id = 'Description'>1. 출석 체크를 적용할 강의 혹은 이미지를 준비합니다.</P>
                 <p id = 'Description'>  2. 다운받은 daARA PROJECT File에서 다아라 출석 체크 프로그램을 실행합니다.</p>
                 <p id = 'Description'>    3. 회원가입을 한 후 로그인을 한 후 프로그램 사용이 가능합니다.</p>
@@ -154,8 +151,13 @@
             
             
             </div>
-
-            <img src="img/background.jpg" width= 100% height= 100%>
+            <!-- YOUTUBE VIDEO -->
+            <section class="youtube">
+                <div class="youtube__area">
+                <div id="player"></div>
+                </div>
+                <div class="youtube__cover"></div>
+            </section>
         </div>
     </div>
 
@@ -169,12 +171,6 @@
     <script src="js/daARA_main_bootstrap.min.js"></script>
     <script src="js/daARA_main.js"></script>
 
-  <!-- YOUTUBE VIDEO -->
-  <section class="youtube">
-    <div class="youtube__area">
-      <div id="player"></div>
-    </div>
-    <div class="youtube__cover"></div>
-  </section>
+  
 </body>
 </html>
