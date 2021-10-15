@@ -1,20 +1,20 @@
 /* YOUTUBE VIDEO */
 .youtube {
   position: relative;
-  height: 1000px;
+  height: 500px;
   margin: auto;
   background-color: #333;
   overflow: hidden;                 /*넘치는 부분을 잘라냄.*/
 }
 .youtube .youtube__area {
-  width: 75%;
+  width: 85%;
   background-color: orange;
   position: absolute;
   left: 50%;
   
-  margin-left: calc(1920px / -2);
+  margin-left: calc(85% / -2);
   top: 50%;
-  margin-top: calc(1920px * 9 / 16 / -2);
+  margin-top: calc(75% * 9 / 16 / -2);
 }
 .youtube .youtube__area::before {   /*가상 요소 선택자*/
   content: "";
