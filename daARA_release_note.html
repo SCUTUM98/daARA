@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About daARA</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">    
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/daARA_main_style.css">
+  <link rel="stylesheet" href="styles/daARA_how_to_use_style.css">
+
+  <!--Swiper-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
+  <!-- CSS 파일 연결 -->
+  <link rel="stylesheet" href="./styles/youtube.css" /> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/daARA_main_style.css">
+</head>
+
+<body>
+  
+    <div id="title-bar">
+        <div id="title" onclick="location.href='daARA_main.html'">daARA</div>
+          <div id="title-bar-btns">
+            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_main.html'">
+             <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+             <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+             <img src = "img/Close.png" class="titleBTN" id="close-btn">
+          </div>
+        </div>  
+      </div>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                <a href="#" class="img logo rounded-circle mb-5"
+                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;"></a>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#" onclick="location.href='daARA_UpLoad.html'">강의 추가하기</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="location.href='daARA_Admin.html'">학생 관리하기</a>
+                            </li>
+                        </ul>
+                    </li>
+                
+                    <li>
+                        <a href="#" onclick="location.href='daARA_InLecture.html'">강의 시작하기</a>
+                    </li>
+                    <li>
+                        <a href="daARA_how_to_use.html">사용법</a>
+                    </li>
+                    <li class="active">
+                        <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">About daARA</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu2">
+                            <li>
+                                <a href="#" onclick="location.href='daARA_about.html'">Team daARA</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="location.href='daARA_release_note.html'">Release Note</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="footer"> 
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                            target="_blank">Colorlib.com</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <!-- <div id="content" class="p-4 p-md-5"> -->
+        <div id="content" style="background-color: #36393e; background-image: none;">
+        
+            <div id="root" style = 'margin-left : 100px; color : white; padding-top : 90px; padding-bottom : 90px'>
+              <text id= 'LevelName'>Version info.
+                <P id = 'Description'>버전정보 입력</P>
+                <p>
+                 
+                </p>
+              </text>
+
+              <text id = 'LevelName'> Release Note
+                <p id = 'Description'>2021.10 daARA renewal </p>
+              </text>
+    </div>
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="js/daARA_main_jquery.min.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+
+    <script src="js/daARA_main_popper.js"></script>
+    <script src="js/daARA_main_bootstrap.min.js"></script>
+    <script src="js/daARA_main.js"></script>
+
+  
+</body>
+</html>
