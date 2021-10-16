@@ -93,7 +93,7 @@ function checkLoaded(flag)
       s3.listObjects(bucketParams)
     }
     dialog.showErrorBox('', '생성된 강의가 없습니다! 강의를 등록해주세요.')
-    location.href='daARA_choice.html';
+    location.href='daARA_main.html';
   }
 }
 
