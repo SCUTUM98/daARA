@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About daARA</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">    
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/daARA_main_style.css">
+  <link rel="stylesheet" href="styles/daARA_how_to_use_style.css">
+
+  <!--Swiper-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
+  <!-- CSS 파일 연결 -->
+  <link rel="stylesheet" href="./styles/youtube.css" /> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/daARA_main_style.css">
+</head>
+
+<body>
+  
+    <div id="title-bar">
+        <div id="title" onclick="location.href='daARA_main.html'">daARA</div>
+          <div id="title-bar-btns">
+            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_main.html'">
+             <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
+             <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
+             <img src = "img/Close.png" class="titleBTN" id="close-btn">
+          </div>
+        </div>  
+      </div>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                <a href="#" class="img logo rounded-circle mb-5"
+                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;"></a>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#" onclick="location.href='daARA_UpLoad.html'">강의 추가하기</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="location.href='daARA_Admin.html'">학생 관리하기</a>
+                            </li>
+                        </ul>
+                    </li>
+                
+                    <li>
+                        <a href="#" onclick="location.href='daARA_InLecture.html'">강의 시작하기</a>
+                    </li>
+                    <li>
+                        <a href="daARA_how_to_use.html">사용법</a>
+                    </li>
+                    <li>
+                        <a href="#">About daARA</a>
+                    </li>
+                </ul>
+
+                <div class="footer"> 
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                            target="_blank">Colorlib.com</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <!-- <div id="content" class="p-4 p-md-5"> -->
+        <div id="content" style="background-color: #36393e; background-image: none;">
+        
+            <div id="root" style = 'margin-left : 100px; color : white; padding-top : 90px; padding-bottom : 90px'>
+              <text id= 'LevelName'>Team daARA
+                <P id = 'Description'>daARA 개발에 참여한 Team daARA를 소개합니다.</P>
+                <p>
+                  <a href="https://github.com/BUZZINGPolarBear" target="blank"><img src = 'img/전준휘.png' style="width: 250px; height: 250px;"></a> 선장 전준휘
+                  <a href="https://github.com/SCUTUM98" target="blank"><img src = 'img/구본근.png' style="width: 250px; height: 250px;"></a> 선원 구본근</br>
+                  <a href="https://github.com/leedohun" target="blank"></a><img src = 'img/이도훈.png' style="width: 250px; height: 250px;"></a> 선원 이도훈
+                  <a href="https://github.com/leedohun" target="blank"></a><img src = 'img/이하은.png' style="width: 250px; height: 250px;"></a> 선원 이하은</br>
+                  <a href="https://github.com/tpdms0159" target="blank"></a><img src = 'img/정세은.png' style="width: 250px; height: 250px;"></a> 선원 정세은</br>
+                </p>
+              </text>
+
+              <text id = 'LevelName'> History
+                <p id = 'Description'>1. 과학기술정보통신부 주최 2021 SW인재페스티벌 한국항공대학교 대표 선정 </p>
+            </text>
+    </div>
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="js/daARA_main_jquery.min.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+
+    <script src="js/daARA_main_popper.js"></script>
+    <script src="js/daARA_main_bootstrap.min.js"></script>
+    <script src="js/daARA_main.js"></script>
+
+  
+</body>
+</html>
