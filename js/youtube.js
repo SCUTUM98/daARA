@@ -12,13 +12,13 @@ function onYouTubeIframeAPIReady() {    // 함수명은 변경 불가
   new YT.Player('player', {
     videoId: 'ka2ve_nfCUQ',   // 필수요소
     playerVars: {             // 영상 재생을 위한 옵션
-      autoplay: true,         // 자동 재생 유무
+      autoplay: false,         // 자동 재생 유무
       loop: true,             // 반복 재생 유무
       playlist: 'ka2ve_nfCUQ',
+      controls: 1
     },
     events: {
       onReady: function (event) {   // 동영상 player가 준비가 되면 함수 실행
-        event.target.mute()         // 음소거
       }
     },
   });
