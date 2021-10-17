@@ -3,7 +3,7 @@
   position: relative;
   height: 600px;
   margin: auto;
-  background-color: #333;
+  /* background-color: #333; */
   overflow: hidden;                 /*넘치는 부분을 잘라냄.*/
 }
 .youtube .youtube__area {
@@ -24,8 +24,8 @@
   padding-top: 56.25%               /*부모 너비를 기준으로 height가 비율 만큼 늘어남*/
 }
 .youtube .youtube__cover {
-  background-image: url("../images/video_cover_pattern.png");
-  background-color: rgba(0,0,0,.3);
+  /* background-image: url("../images/video_cover_pattern.png"); */
+  /* background-color: rgba(0,0,0,.3); */
   position: absolute;
   top: 0;
   left: 0;

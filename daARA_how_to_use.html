@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>HOW TO USE</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOW TO USE</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">    
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles/daARA_main_style.css">
-  <link rel="stylesheet" href="styles/daARA_how_to_use_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/daARA_main_style.css">
+    <link rel="stylesheet" href="styles/daARA_how_to_use_style.css">
 
-  <!--Swiper-->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+    <!--Swiper-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
 
-  <!-- youtube.js 연결 -->
-  <script src="./js/youtube.js"></script>
+    <!-- youtube.js 연결 -->
+    <script src="./js/youtube.js"></script>
 
-  <!-- CSS 파일 연결 -->
-  <link rel="stylesheet" href="./styles/youtube.css" /> 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles/daARA_main_style.css">
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="./styles/youtube.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/daARA_main_style.css">
 </head>
 
 <body>
-  
+
     <div id="title-bar">
         <div id="title" onclick="location.href='daARA_main.html'">daARA</div>
-          <div id="title-bar-btns">
-            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_main.html'">
-             <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
-             <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
-             <img src = "img/Close.png" class="titleBTN" id="close-btn">
-          </div>
-        </div>  
-      </div>
+        <div id="title-bar-btns">
+            <img src="img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;"
+                onclick="location.href='daARA_main.html'">
+            <img src="img/Minimize.png" class="titleBTN" id="min-btn">
+            <img src="img/Maximize.png" class="titleBTN" id="max-btn">
+            <img src="img/Close.png" class="titleBTN" id="close-btn">
+        </div>
+    </div>
+    </div>
 
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
             <div class="p-4 pt-5">
                 <a href="#" class="img logo rounded-circle mb-5"
-                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;" onclick="location.href='daARA_main.html'"></a>
+                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;"
+                    onclick="location.href='daARA_main.html'"></a>
                 <ul class="list-unstyled components mb-5">
                     <li>
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">강의관리</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
                                 <a href="#" onclick="location.href='daARA_UpLoad.html'">강의 추가하기</a>
@@ -54,15 +58,16 @@
                             </li>
                         </ul>
                     </li>
-                
+
                     <li>
                         <a href="#" onclick="location.href='daARA_InLecture.html'">강의 시작하기</a>
                     </li>
                     <li class="active">
                         <a href="daARA_how_to_use.html">사용법</a>
                     </li>
-                    <li >
-                        <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">About daARA</a>
+                    <li>
+                        <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">About daARA</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu2">
                             <li>
                                 <a href="#" onclick="location.href='daARA_about.html'">Team daARA</a>
@@ -74,7 +79,7 @@
                     </li>
                 </ul>
 
-                <div class="footer"> 
+                <div class="footer">
                     <p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;
@@ -91,43 +96,47 @@
         <!-- Page Content  -->
         <!-- <div id="content" class="p-4 p-md-5"> -->
         <div id="content" style="background-color: #36393e; background-image: none;">
-        
-            <div id="root" style = 'margin-left : 100px; color : white; padding-top : 90px; padding-bottom : 90px'>
-              <text id= 'LevelName'>Installation
-                <P id = 'Description'>아래 링크를 통해 daARA Github로 이동하여 daARA PROJECT 프로그램을 설치합니다.</P>
-                <p>
-                  <a href = 'https://github.com/BUZZINGPolarBear/daARA/blob/main/README.md' target="_blank">
-                  <img src = "https://media.vlpt.us/images/yund_272/post/fea870c9-edeb-4eb7-80a8-e51d9d502397/github.png" style = 'width : 800px; height: 250px;'>
-                  </a>
-                  
-                </p>
-              </text>
 
-              <text id = 'LevelName'> Usage
-                <p id = 'Description'>1. 출석 체크를 적용할 강의 혹은 이미지를 준비합니다.</P>
-                <p id = 'Description'>2. 다운받은 daARA PROJECT File에서 다아라 출석 체크 프로그램을 실행합니다.</p>
-                <p id = 'Description'>3. 초기 이용시 회원가입을 한 후 로그인을 한 후 프로그램 사용이 가능합니다.</p>
-                <img id = 'ScreenShot' src = 'Login.png' >
-                <p id = 'Description'>4. 강의관리 → 강의 추가하기를 통해 강의를 추가하고 해당 강의를 수강하는 학생들을 추가합니다.</p>
-                <img id = 'ScreenShot' src = 'make_Lecture.png' >
-                <p id = 'Description'>5. 강의 시작하기 탭에서 강의를 시작합니다.</p>
-            </text>
+            <div id="root" style='margin-left : 100px; color : white; padding-top : 90px;'>
+                <text id='LevelName'>Installation
+                    <P id='Description'>아래 링크를 통해 daARA Github로 이동하여 daARA PROJECT 프로그램을 설치합니다.</P>
+                    <p>
+                        <a href='https://github.com/BUZZINGPolarBear/daARA/blob/main/README.md' target="_blank">
+                            <img src="https://media.vlpt.us/images/yund_272/post/fea870c9-edeb-4eb7-80a8-e51d9d502397/github.png"
+                                style='width : 800px; height: 250px;'>
+                        </a>
 
-            <text id = 'LevelName'>Help More</text>
-            
+                    </p>
+                </text>
+
+                <text id='LevelName'> Usage
+                    <p id='Description'>1. 출석 체크를 적용할 강의 혹은 이미지를 준비합니다.</P>
+                    <p id='Description'>2. 다운받은 daARA PROJECT File에서 다아라 출석 체크 프로그램을 실행합니다.</p>
+                    <p id='Description'>3. 초기 이용시 회원가입을 한 후 로그인을 한 후 프로그램 사용이 가능합니다.</p>
+                    <img id='ScreenShot' src='Login.png'>
+                    <p id='Description'>4. 강의관리 → 강의 추가하기를 통해 강의를 추가하고 해당 강의를 수강하는 학생들을 추가합니다.</p>
+                    <img id='ScreenShot' src='make_Lecture.png'>
+                    <p id='Description'>5. 강의 시작하기 탭에서 강의를 시작합니다.</p>
+                </text>
+
+                <text id='LevelName'>Help More</text>
+
             </div>
             <!-- YOUTUBE VIDEO -->
-            <section class="youtube" style = 'padding-left : 20px;'>
+            <section class="youtube" style='padding-left : 20px; margin-top: 0;'>
                 <div class="youtube__area">
-                <div id="player"></div>
+                    <div id="player">
+                        <iframe width="820" height="480"  src="https://www.youtube.com/embed/ka2ve_nfCUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
+                                id="Description"></iframe>
+                    </div>
                 </div>
-                <div class="youtube__cover"></div>
             </section>
+            
         </div>
     </div>
 
     <!-- Insert this line above script imports  -->
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
     <script src="js/daARA_main_jquery.min.js"></script>
     <!-- Insert this line after script imports -->
     <script>if (window.module) module = window.module;</script>
@@ -136,6 +145,7 @@
     <script src="js/daARA_main_bootstrap.min.js"></script>
     <script src="js/daARA_main.js"></script>
 
-  
+
 </body>
+
 </html>
