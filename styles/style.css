@@ -195,11 +195,18 @@ span {
 }
 
     #title-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     -webkit-app-region: drag;
     height: 30px; 
+    padding: 1rem;
     background-color: rgba(37, 36, 36, 0.8);
-    padding: none;
-    margin: 0px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
    }
    
    #title {
