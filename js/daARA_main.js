@@ -1,4 +1,5 @@
 const app = require('electron').remote.app;
+var main_logo_click_cnt = 0;
 //---------------------------------------------------------------------------------------------------------Electron 관련 변수
 
 
@@ -69,4 +70,13 @@ function linkTIdaARA_admin()
 function lintTOdaATA_InLecture()
 {
     location.href='./daARA_InLecture.html'
+}
+
+function main_logo_click()
+{
+    main_logo_click_cnt++;
+    if(main_logo_click_cnt>=5)
+    {
+        location.href = "./daARA_after_lecture.html"
+    }
 }
