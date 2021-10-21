@@ -11,8 +11,9 @@
   }
 
 #EmotionResultBarGraphCavas{
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     width: 900px;
     height: 500px;
+    margin-left: 270px;
     margin-top: 20px;
 }
