@@ -1,6 +1,7 @@
 /dist
 /browser
 browser.zip
+*.zip
 vscode/
 assets/
 img/

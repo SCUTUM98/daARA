@@ -1,4 +1,4 @@
-const app = require('electron').remote.app;
+const app = require('electron').remote;
 var main_logo_click_cnt = 0;
 //---------------------------------------------------------------------------------------------------------Electron 관련 변수
 
@@ -7,7 +7,7 @@ var main_logo_click_cnt = 0;
 //화면 최소화, 최대화, 창 옮기기 설정
 function init() { 
   document.getElementById("min-btn").addEventListener("click", function (e) {
-      remote.BrowserWindow.getFocusedWindow().minimize(); 
+      remote.getFocusedWindow().minimize(); 
   });
 
   document.getElementById("max-btn").addEventListener("click", function (e) {
