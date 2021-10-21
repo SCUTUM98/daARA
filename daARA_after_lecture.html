@@ -39,7 +39,7 @@
                 </text>
                 <text id='LevelName'>감정인식 로그
                     <p>
-                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                        <canvas id="EmotionResultBarGraphCavas" ></canvas>
                     </p>
                 </text>
             </div>
@@ -48,25 +48,4 @@
 
     </div>
 </body>
-<script type="text/javascript" src="./canvasjs-3.4.4/canvasjs.min.js"></script>
-<script type="text/javascript">
-        var chart = new CanvasJS.Chart("chartContainer", {
-            type: 'bar',
-            data: [
-            {
-                type: "column",
-                dataPoints: [
-                { x: 10, y: 10 },
-                { x: 20, y: 15 },
-                { x: 30, y: 25 },
-                { x: 40, y: 30 },
-                { x: 50, y: 28 }
-                ]
-            }
-            ]
-        });
-
-        chart.render();
-</script>
-
 </html>
