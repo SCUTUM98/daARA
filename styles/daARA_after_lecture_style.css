@@ -9,3 +9,10 @@
     border-bottom: solid 5px rgb(218, 108, 35);
     font-weight : bold;
   }
+
+#EmotionResultBarGraphCavas{
+    background-color: antiquewhite;
+    width: 1200px;
+    height: 500px;
+    margin-top: 20px;
+}
