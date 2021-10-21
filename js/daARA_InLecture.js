@@ -80,6 +80,31 @@ var minutes = now.getMinutes();
 var seconds = now.getSeconds();
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
+//캔버스 그리기
+// var drawCANVASBTN = document.getElementById("DEVmodeDRAWCANVAS");
+
+// drawCANVASBTN.addEventListener("click", drawBarPlot());
+
+// var canvas = document.getElementById("EmotionResultBarGraphCavas");
+// canvas.width = 1200;
+// canvas.height = 500;
+// var ctx = canvas.getContext("2d");
+
+// var total_emotion_cnt = 0;
+
+// var TEST_final_emotion_result = {
+//   "HAPPY": 43,
+//   "SAD": 70,
+//   "ANGRY": 120,
+//   "CONFUSED": 20,
+//   "DISGUSTED": 12,
+//   "SURPERISED": 4,
+//   "CALM": 3,
+//   "UNKNOWN": 0,
+//   "FEAR": 0,
+// };
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function init() { 
   document.getElementById("min-btn").addEventListener("click", function (e) {
@@ -582,3 +607,4 @@ const uploadFile = (fileName) => {
     //console.log(`File uploaded successfully. ${data.Location}`);
   });
 };
+

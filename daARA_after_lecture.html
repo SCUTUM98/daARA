@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="styles/daARA_main_style.css">
     <link rel="stylesheet" href="styles/daARA_after_lecture_style.css">
     <link rel="stylesheet" href="styles/style.css">
-    
+    <script type='text/javascript' src='js/_config.js'></script>
     <title>After Lecture</title>
-
-   
 </head>
 
 <body>
@@ -39,8 +37,10 @@
                 </text>
                 <text id='LevelName'>감정인식 로그
                     <p>
+                        
                         <canvas id="EmotionResultBarGraphCavas" ></canvas>
                     </p>
+                    <button class="button is-primary is-hovered" onclick="drawBarPlot()">개발자 모드: Canvas그려보기</button>
                 </text>
             </div>
         </div>
@@ -48,4 +48,5 @@
 
     </div>
 </body>
+<script src = "js/daARA_afterLecture.js"></script>
 </html>
