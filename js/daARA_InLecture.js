@@ -28,6 +28,18 @@ var globalSource, class_name;
 var uncheckedFaces      = [], checkedFaces = [], S3imagesName = [];
 
 var save_data = '\uFEFF';
+
+var final_emotion_result = {
+  "HAPPY": 0,
+  "SAD": 0,
+  "ANGRY": 0,
+  "CONFUSED": 0,
+  "DISGUSTED": 0,
+  "SURPERISED": 0,
+  "CALM": 0,
+  "UNKNOWN": 0,
+  "FEAR": 0,
+};
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //DAARA html 
@@ -433,6 +445,7 @@ async function takeScreenShot() {
     } else {
       response.FaceDetails.forEach(data => {
         map[data.Emotions[0].Type] += 1
+        final_emotion_result[data.Emotions[0].Type] += 1;
       }) // for response.faceDetails
       var sorted_keys = Object.keys(map).sort(function(a,b) { return map[b] - map[a]; });
      
