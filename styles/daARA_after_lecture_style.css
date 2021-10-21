@@ -1,0 +1,11 @@
+#Page3{
+    background-color: #36393e;
+    height: 100%;
+}
+
+#LevelName {
+    width : 500px;
+    font-size : 18px;
+    border-bottom: solid 5px rgb(218, 108, 35);
+    font-weight : bold;
+  }
