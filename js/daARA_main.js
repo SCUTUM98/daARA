@@ -1,4 +1,5 @@
-const app = require('electron').remote;
+const {remote, ipcRenderer, BrowserWindow} = require('electron');
+const app = require('electron').remote.app;
 var main_logo_click_cnt = 0;
 //---------------------------------------------------------------------------------------------------------Electron 관련 변수
 
@@ -6,21 +7,17 @@ var main_logo_click_cnt = 0;
 //--------------------------------------------------------------------------------
 //화면 최소화, 최대화, 창 옮기기 설정
 function init() { 
-  document.getElementById("min-btn").addEventListener("click", function (e) {
-      remote.getFocusedWindow().minimize(); 
-  });
+    document.getElementById("min-btn").addEventListener("click", function (e) {
+        remote.BrowserWindow.getFocusedWindow().minimize(); 
+    });
 
-  document.getElementById("max-btn").addEventListener("click", function (e) {
-      if( remote.BrowserWindow.getFocusedWindow().isMaximized()==true || remote.BrowserWindow.getFocusedWindow().isFullScreen()==true)
-      {
-          remote.BrowserWindow.getFocusedWindow().restore();
-      }
-      else remote.BrowserWindow.getFocusedWindow().maximize(); 
-  });
+    document.getElementById("max-btn").addEventListener("click", function (e) {
+        remote.BrowserWindow.getFocusedWindow().maximize(); 
+    });
 
-  document.getElementById("close-btn").addEventListener("click", function (e) {
-  app.quit();
-  }); 
+    document.getElementById("close-btn").addEventListener("click", function (e) {
+    app.quit();
+    }); 
 }; 
 
 document.onreadystatechange = function () {

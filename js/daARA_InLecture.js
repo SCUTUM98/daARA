@@ -508,10 +508,58 @@ async function takeScreenShot() {
 stopBtn.onclick = e => {
   clearInterval(take_screen_shot);
   buildTable();
-  show('Page3', 'Page2')
   stopBtn.disabled = true;
   startBtn.classList.remove('is-danger');
   startBtn.innerText = '출석 시작';
+  
+  for (var i=0; i < uncheckedFaces.length; i++) {
+    createEXCEL(uncheckedFaces[i], false)
+  }
+  location.href='./daARA_after_lecture.html'
+
+  // var browserWindow = remote.getCurrentWindow();
+  // var options = {
+  //     title: "출석파일 다운로드",
+  //     filters: [
+  //         {name: '엑셀파일', extensions: ['xls']}
+  //     ],
+  //     defaultPath: month + "월 " + day + "일 " + class_name + " 출석체크.xls"
+  // }
+
+  // let saveDialog = dialog.showSaveDialog(browserWindow, options);
+  // saveDialog.then(function(saveTo) {
+  //     console.log(saveTo.filePath);
+  //     fs.appendFile(saveTo.filePath, save_data, (err) => {
+  //       if (err) throw console.log(err);
+  //     });
+  //     //추가 로그파일 다운로드 옵션
+  //     const options = {
+  //       type: 'question',
+  //       buttons: ['감정 로그 확인', '취소', '다아라 종료하기'],
+  //       defaultId: 0,
+  //       title: '감정 로그를 확인하시겠습니까?',
+  //       message: '기록된 감정 로그를 확인하시겠습니까?',
+  //       detail: '기록된 감정을 확인하실 수 있습니다.',
+  //       checkboxLabel: '응답 기억하기',
+  //       checkboxChecked: true,
+  //     };
+  //    let messageDialog =  dialog.showMessageBox(browserWindow, options);
+  //    messageDialog.then(function(selectedAns){
+  //      if(selectedAns.response==0)
+  //      {
+  //         console.log(__dirname+"\\emotion.log");
+  //         window.open(__dirname+"\\emotion.log", 'electron', 'frame=true');
+  //      }
+  //      else if(selectedAns.response==2)
+  //      {
+  //        app.quit();
+  //      }
+  //    })
+  //   })
+    //검은 화면 업로드: 
+    var file = __dirname+"/screenshot_images/Black.png";
+    console.log(file);
+    uploadFile(file);
 }
 
 function buildTable() {
@@ -561,52 +609,3 @@ const uploadFile = (fileName) => {
     //console.log(`File uploaded successfully. ${data.Location}`);
   });
 };
-
-for (var i=0; i < uncheckedFaces.length; i++) {
-  createEXCEL(uncheckedFaces[i], false)
-}
-const resultBTN = document.getElementById('downResultBTN');
-resultBTN.onclick = e => {
-  var browserWindow = remote.getCurrentWindow();
-  var options = {
-      title: "출석파일 다운로드",
-      filters: [
-          {name: '엑셀파일', extensions: ['xls']}
-      ],
-      defaultPath: month + "월 " + day + "일 " + class_name + " 출석체크.xls"
-  }
-
-  let saveDialog = dialog.showSaveDialog(browserWindow, options);
-  saveDialog.then(function(saveTo) {
-      console.log(saveTo.filePath);
-      fs.appendFile(saveTo.filePath, save_data, (err) => {
-        if (err) throw console.log(err);
-      });
-      //추가 로그파일 다운로드 옵션
-      const options = {
-        type: 'question',
-        buttons: ['감정 로그 확인', '취소', '다아라 종료하기'],
-        defaultId: 0,
-        title: '감정 로그를 확인하시겠습니까?',
-        message: '기록된 감정 로그를 확인하시겠습니까?',
-        detail: '기록된 감정을 확인하실 수 있습니다.',
-        checkboxLabel: '응답 기억하기',
-        checkboxChecked: true,
-      };
-    let messageDialog =  dialog.showMessageBox(browserWindow, options);
-    messageDialog.then(function(selectedAns){
-      if(selectedAns.response==0)
-      {
-          console.log(__dirname+"\\emotion.log");
-          window.open(__dirname+"\\emotion.log", 'electron', 'frame=true');
-      }
-      else if(selectedAns.response==2)
-      {
-        app.quit();
-      }
-    })
-    })
-    //검은 화면 업로드: 
-    var file = __dirname+"/screenshot_images/Black.png";
-    uploadFile(file);
-  }
