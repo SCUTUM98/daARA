@@ -7,7 +7,11 @@ const app             = require('electron').remote.app;
 var browserWindow = remote.getCurrentWindow();
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
-
+//js 기본 모듈
+const os   = require('os');
+const fs   = require('fs');
+const path = require('path');
+const { writeFile } = require('fs');
 //--------------------------------------------------------------------------------
 //화면 최소화, 최대화, 창 옮기기 설정
 function init() { 
@@ -31,12 +35,17 @@ document.onreadystatechange = function () {
 };
 //--------------------------------------------------------------------------------
 const downloadResultBTN = document.getElementById("downloadResultBTN");
+const viewLogBTN =  document.getElementById("viewLogBTN");
 const now     = new Date();
 const month   = now.getMonth()+1;
 const day     = now.getDate();
+var save_data = '\uFEFF';
 if(localStorage.getItem('getClassName')){ var class_name = JSON.parse(localStorage.getItem('getClassName')) }
-if(localStorage.getItem('getFinalEmotionResult')){ var final_emotion_result= localStorage.getItem('getFinalEmotionResult') }
+if(localStorage.getItem('getFinalEmotionResult')){ var final_emotion_result = JSON.parse(localStorage.getItem('getFinalEmotionResult')) }
+
 //--------------------------------------------------------------------------------
+drawBarPlot()
+
 downloadResultBTN.addEventListener('click', e => {
  
   var options = {
@@ -53,30 +62,13 @@ downloadResultBTN.addEventListener('click', e => {
       fs.appendFile(saveTo.filePath, save_data, (err) => {
         if (err) throw console.log(err);
       });
-      //추가 로그파일 다운로드 옵션
-      const options = {
-        type: 'question',
-        buttons: ['감정 로그 확인', '취소', '다아라 종료하기'],
-        defaultId: 0,
-        title: '감정 로그를 확인하시겠습니까?',
-        message: '기록된 감정 로그를 확인하시겠습니까?',
-        detail: '기록된 감정을 확인하실 수 있습니다.',
-        checkboxLabel: '응답 기억하기',
-        checkboxChecked: true,
-      };
-     let messageDialog =  dialog.showMessageBox(browserWindow, options);
-     messageDialog.then(function(selectedAns){
-       if(selectedAns.response==0)
-       {
-          console.log(__dirname+"\\emotion.log");
-          window.open(__dirname+"\\emotion.log", 'electron', 'frame=true');
-       }
-       else if(selectedAns.response==2)
-       {
-         app.quit();
-       }
-     })
+      
     })
+})
+
+viewLogBTN.addEventListener('click', e => {
+  //감정 로그파일 보기
+  window.open(__dirname+"\\emotion.log", 'electron', 'frame=true');
 })
 
 
@@ -91,37 +83,33 @@ function drawBarPlot()
   
 
   var sorted_final_emotion = Object.keys(final_emotion_result).sort(function(a,b) { return final_emotion_result[b] - final_emotion_result[a]; });
-  console.log(sorted_final_emotion);
 
-  for(var i=0; i<sorted_final_emotion.length; i++) total_emotion_cnt += final_emotion_result[sorted_final_emotion[i]];
-  console.log(total_emotion_cnt);
-
+  for(var i=0; i<sorted_final_emotion.length; i++) 
+  {
+    total_emotion_cnt += final_emotion_result[sorted_final_emotion[i]];
+  }
   draw_canvas(final_emotion_result);
 }
 
-var color = ["#E43176", "#FA4660", "#FF6447", "#FF852C", "#FFA600"];
-var widthSize = [450, 400, 350, 300, 250];
-var heightSize = [430, 390, 350, 310, 270];
+
 
 function draw_canvas(final_emotion_result) {
   var canvas = document.getElementById("EmotionResultBarGraphCavas");
   canvas.width = 900;
   canvas.height = 500;
   var ctx = canvas.getContext("2d");
+  var color = ["#E43176", "#FA4660", "#FF6447", "#FF852C", "#FFA600"];
+  var widthSize = [450, 400, 350, 300, 250];
+  var heightSize = [430, 390, 350, 310, 270];
 
   var total_emotion_cnt = 0;
 
-  var sorted_final_emotion = Object.keys(final_emotion_result).sort(
-    function (a, b) {
-      return final_emotion_result[b] - final_emotion_result[a];
-    }
-  );
+  var sorted_final_emotion = Object.keys(final_emotion_result).sort(function (a, b) {return final_emotion_result[b] - final_emotion_result[a];});
 
   for (var i = 0; i < sorted_final_emotion.length; i++)
     total_emotion_cnt += final_emotion_result[sorted_final_emotion[i]];
-  console.log(total_emotion_cnt);
 
-  for (step = 0; step < 5; step++) 
+  for (var step = 0; step < 5; step++) 
   {
     ctx.fillStyle = color[step];
     ctx.fillRect(
