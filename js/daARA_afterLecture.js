@@ -31,6 +31,7 @@ function drawBarPlot()
 var color = ["#E43176", "#FA4660", "#FF6447", "#FF852C", "#FFA600"];
 var widthSize = [450, 400, 350, 300, 250];
 var heightSize = [430, 390, 350, 310, 270];
+
 function draw_canvar(final_emotion_result) {
   var canvas = document.getElementById("EmotionResultBarGraphCavas");
   canvas.width = 900;
