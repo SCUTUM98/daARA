@@ -201,7 +201,7 @@ function changedOption(obj)
 {
   document.getElementById("showSelectedLecture").innerHTML = obj.value;
   globalSource, class_name = obj.value;
-  console.log(class_name) 
+  console.log(typeof(class_name)) 
   //savedata 초기화
   
 }
@@ -511,20 +511,17 @@ stopBtn.onclick = e => {
   stopBtn.disabled = true;
   startBtn.classList.remove('is-danger');
   startBtn.innerText = '출석 시작';
+
+  var class_name_to_STRING = {
+    name: class_name
+  }
   
+  localStorage.setItem('getClassName', JSON.stringify(class_name_to_STRING));
   for (var i=0; i < uncheckedFaces.length; i++) {
     createEXCEL(uncheckedFaces[i], false)
   }
   location.href='./daARA_after_lecture.html'
-
-  // var browserWindow = remote.getCurrentWindow();
-  // var options = {
-  //     title: "출석파일 다운로드",
-  //     filters: [
-  //         {name: '엑셀파일', extensions: ['xls']}
-  //     ],
-  //     defaultPath: month + "월 " + day + "일 " + class_name + " 출석체크.xls"
-  // }
+  localStorage.setItem('getFinalEmotionResult', JSON.stringify(final_emotion_result));
 
   // let saveDialog = dialog.showSaveDialog(browserWindow, options);
   // saveDialog.then(function(saveTo) {
