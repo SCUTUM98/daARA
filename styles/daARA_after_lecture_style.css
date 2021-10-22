@@ -16,4 +16,13 @@
     height: 500px;
     margin-left: 270px;
     margin-top: 20px;
+    z-index: 0;
+}
+
+#viewLogBTN{
+    z-index: 999;
+    top: 800px;
+    left: 140px;
+    
+    position: absolute;
 }
