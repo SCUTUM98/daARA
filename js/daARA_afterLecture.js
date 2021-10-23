@@ -37,16 +37,34 @@ document.onreadystatechange = function () {
 const downloadResultBTN = document.getElementById("downloadResultBTN");
 const viewLogBTN =  document.getElementById("viewLogBTN");
 const now     = new Date();
+const year    = now.getFullYear();
 const month   = now.getMonth()+1;
 const day     = now.getDate();
 var save_data = '\uFEFF';
-if(localStorage.getItem('getClassName')){ var class_name = JSON.parse(localStorage.getItem('getClassName')) }
-if(localStorage.getItem('getFinalEmotionResult')){ var final_emotion_result = JSON.parse(localStorage.getItem('getFinalEmotionResult')) }
+if(localStorage.getItem('getClassName')){ var class_name = JSON.parse(localStorage.getItem('getClassName'))}
+if(localStorage.getItem('getFinalEmotionResult')){ var final_emotion_result = JSON.parse(localStorage.getItem('getFinalEmotionResult'))}
+if(localStorage.getItem('getCheckResult')){ var check_result = JSON.parse(localStorage.getItem('getCheckResult')) }
 
 //--------------------------------------------------------------------------------
 drawBarPlot()
 
 downloadResultBTN.addEventListener('click', e => {
+  var data= year+" "+class_name.name+" 출석체크\n"
+  save_data += data;
+  var data= "출석일\," + "시간\," + '이름\,' + '출석확인\n'
+  save_data += data;
+
+  console.log(check_result)
+  for (var i = 0; i < check_result.length; i++){
+    //console.log("array index: " + i);
+    var obj = check_result[i];
+    for (var key in obj){
+      var value = obj[key];
+      //console.log(key + ": " + value);
+      save_data += value + '\n';
+      console.log(save_data);
+    }
+  }
  
   var options = {
     title: "출석파일 다운로드",
@@ -62,7 +80,6 @@ downloadResultBTN.addEventListener('click', e => {
       fs.appendFile(saveTo.filePath, save_data, (err) => {
         if (err) throw console.log(err);
       });
-      
     })
 })
 
