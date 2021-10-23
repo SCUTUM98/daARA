@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>About daARA</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/daARA_main_style.css">
   <link rel="stylesheet" href="styles/daARA_how_to_use_style.css">
@@ -16,139 +17,194 @@
   <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
 
   <!-- CSS 파일 연결 -->
-  <link rel="stylesheet" href="./styles/youtube.css" /> 
+  <link rel="stylesheet" href="./styles/youtube.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/daARA_main_style.css">
   <link rel="stylesheet" href="styles/style.css">
+
+
 </head>
 
 <body>
-  
-    <header id="title-bar">
-        <div id="title" onclick="location.href='daARA_main.html'">daARA</div>
-          <div id="title-bar-btns">
-            <img src = "img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;" onclick="location.href='daARA_main.html'">
-             <img src = "img/Minimize.png" class="titleBTN" id="min-btn">
-             <img src = "img/Maximize.png" class="titleBTN" id="max-btn">
-             <img src = "img/Close.png" class="titleBTN" id="close-btn">
-          </div>
-        </div>  
-    </header>
 
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar">
-            <div class="p-4 pt-5">
-                <a href="#" class="img logo rounded-circle mb-5"
-                    style="background-image: url(img/daARA-ICON.ico); background-size: 90%;" onclick="location.href='daARA_main.html'"></a>
-                <ul class="list-unstyled components mb-5">
-                    <li>
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#" onclick="location.href='daARA_UpLoad.html'">강의 추가하기</a>
-                            </li>
-                            <li>
-                                <a href="#" onclick="location.href='daARA_Admin.html'">학생 관리하기</a>
-                            </li>
-                        </ul>
-                    </li>
-                
-                    <li>
-                        <a href="#" onclick="location.href='daARA_InLecture.html'">강의 시작하기</a>
-                    </li>
-                    <li>
-                        <a href="daARA_how_to_use.html">사용법</a>
-                    </li>
-                    <li class="active">
-                        <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">About daARA</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu2">
-                            <li class="active">
-                                <a href="#" onclick="location.href='daARA_about.html'">Team daARA</a>
-                            </li>
-                            <li>
-                                <a href="#" onclick="location.href='daARA_release_note.html'">Release Note</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <div class="footer"> 
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-                        is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                            target="_blank">Colorlib.com</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-
-            </div>
-        </nav>
-
-        <!-- Page Content  -->
-        <!-- <div id="content" class="p-4 p-md-5"> -->
-        <div id="content" style="background-color: #36393e; background-image: none;">
-        
-            <div id="root" style = 'margin-left : 100px; color : white; padding-top : 90px; padding-bottom : 90px'>
-              <text id= 'LevelName'>Team daARA
-                <P id = 'Description'>daARA 개발에 참여한 Team daARA를 소개합니다.</P>
-                <style type="text/css">
-                    .tg  {border:none;border-collapse:collapse;border-spacing:0;}
-                    .tg td{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;
-                      padding:10px 5px;word-break:normal;}
-                    .tg th{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;
-                      overflow:hidden;padding:15px 30px;word-break:normal;}
-                    .tg .tg-pb0m{border-color:inherit;text-align:center;vertical-align:bottom}
-                    .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-                    .tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:top}
-                    </style>
-                    <table class="tg">
-                    <p>
-                        <table class="tg">
-                            <thead>
-                              <tr>
-                                <th class="tg-0pky"><a href="https://github.com/BUZZINGPolarBear" target="blank"><img src= "img/전준휘.png" href="https://github.com/BUZZINGPolarBear" target="blank" alt="선장 전준휘" width="200" height="200"></a></th>
-                                <th class="tg-0pky"><a href="https://github.com/SCUTUM98" target="blank"><img src="img/구본근.png" alt="선원 구본근" width="200" height="200"></a></th>
-                                <th class="tg-0pky"><a href="https://github.com/leedohun" target="blank"><img src="img/이도훈.png" alt="선원 이도훈" width="200" height="200"></a></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td class="tg-0pky">Captain. Junhwi Jeon</td>
-                                <td class="tg-0pky">Crew. Bongeun Gu</td>
-                                <td class="tg-0pky">Crew. Dohun Lee</td>
-                              </tr>
-                              <tr>
-                                <td class="tg-0pky"><a href="https://github.com/haeunddong" target="blank"><img src="img/이하은.png" alt="선원 이하은" width="200" height="200"></a></td>
-                                <td class="tg-0pky"><a href="https://github.com/tpdms0159" target="blank"><img src="img/정세은.png" alt="선원 정세은" width="200" height="200"></a></td>
-                                <td class="tg-0pky"><a href="https://github.com/JUNIandPIRATES/daARA_service" target="blank"><img src="img/daARA-ICON.ico" width="200" height="200"></td>
-                              </tr>
-                              <tr>
-                                <td class="tg-0pky">Crew. Haeun Lee</td>
-                                <td class="tg-0pky">Crew Seeun Jung</td>
-                                <td class="tg-0pky">Project daARA</td>
-                              </tr>
-                            </tbody>
-                            </table>
-                    </p>
-              </text>
-
-              <text id = 'LevelName'> History
-                <p id = 'Description'>1. 과학기술정보통신부 주최 2021 SW인재페스티벌 한국항공대학교 대표 선정 </p>
-              </text>
+  <header id="title-bar">
+    <div id="title" onclick="location.href='daARA_main.html'">daARA</div>
+    <div id="title-bar-btns">
+      <img src="img/Back.png" class="titleBTN" id="back-btn" style="width: 18px; height: 18px;"
+        onclick="location.href='daARA_main.html'">
+      <img src="img/Minimize.png" class="titleBTN" id="min-btn">
+      <img src="img/Maximize.png" class="titleBTN" id="max-btn">
+      <img src="img/Close.png" class="titleBTN" id="close-btn">
     </div>
+    </div>
+  </header>
 
-    <!-- Insert this line above script imports  -->
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-    <script src="js/daARA_main_jquery.min.js"></script>
-    <!-- Insert this line after script imports -->
-    <script>if (window.module) module = window.module;</script>
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+      <div class="p-4 pt-5">
+        <a href="#" class="img logo rounded-circle mb-5"
+          style="background-image: url(img/daARA-ICON.ico); background-size: 90%;"
+          onclick="location.href='daARA_main.html'"></a>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">강의관리</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>
+                <a href="#" onclick="location.href='daARA_UpLoad.html'">강의 추가하기</a>
+              </li>
+              <li>
+                <a href="#" onclick="location.href='daARA_Admin.html'">학생 관리하기</a>
+              </li>
+            </ul>
+          </li>
 
-    <script src="js/daARA_main_popper.js"></script>
-    <script src="js/daARA_main_bootstrap.min.js"></script>
-    <script src="js/daARA_main.js"></script>
+          <li>
+            <a href="#" onclick="location.href='daARA_InLecture.html'">강의 시작하기</a>
+          </li>
+          <li>
+            <a href="daARA_how_to_use.html">사용법</a>
+          </li>
+          <li class="active">
+            <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">About daARA</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu2">
+              <li class="active">
+                <a href="#" onclick="location.href='daARA_about.html'">Team daARA</a>
+              </li>
+              <li>
+                <a href="#" onclick="location.href='daARA_release_note.html'">Release Note</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
 
-  
+        <div class="footer">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+            is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+              target="_blank">Colorlib.com</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Page Content  -->
+    <!-- <div id="content" class="p-4 p-md-5"> -->
+    <div id="content" style="background-color: #36393e; background-image: none;">
+
+      <div id="root" style='margin-left : 100px; color : white; padding-top : 90px; padding-bottom : 90px'>
+        <text id='LevelName'>Team daARA
+          <P id='Description'>daARA 개발에 참여한 Team daARA를 소개합니다.</P>
+          <style type="text/css">
+            .tg {
+              border: none;
+              border-collapse: collapse;
+              border-spacing: 0;
+            }
+
+            .tg td {
+              border-style: solid;
+              border-width: 0px;
+              font-family: Arial, sans-serif;
+              font-size: 14px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            }
+
+            .tg th {
+              border-style: solid;
+              border-width: 0px;
+              font-family: Arial, sans-serif;
+              font-size: 14px;
+              font-weight: normal;
+              overflow: hidden;
+              padding: 15px 30px;
+              word-break: normal;
+            }
+
+            .tg .tg-pb0m {
+              border-color: inherit;
+              text-align: center;
+              vertical-align: bottom
+            }
+
+            .tg .tg-c3ow {
+              border-color: inherit;
+              text-align: center;
+              vertical-align: top
+            }
+
+            .tg .tg-0pky {
+              border-color: inherit;
+              text-align: center;
+              vertical-align: top
+            }
+          </style>
+          <table class="tg">
+            <p>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0pky"><a href="#"
+                      onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/BUZZINGPolarBear');"><img
+                        id="cap" src="img/전준휘.png" alt="선장 전준휘" width="200" height="200"></a>
+                  </th>
+                  <th class="tg-0pky"><a href="#"
+                      onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/SCUTUM98/daARA');"><img
+                        src="img/구본근.png" alt="선원 구본근" width="200" height="200"></a>
+                  </th>
+                  <th class="tg-0pky"><a href="#"
+                      onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/leedohun');"><img
+                        src="img/이도훈.png" alt="선원 이도훈" width="200" height="200"></a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0pky">Captain. Junhwi Jeon</td>
+                  <td class="tg-0pky">Crew. Bongeun Gu</td>
+                  <td class="tg-0pky">Crew. Dohun Lee</td>
+                </tr>
+                <tr>
+                  <td class="tg-0pky"><a href="#"
+                      onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/haeunddong');"><img
+                        src="img/이하은.png" alt="선원 이하은" width="200" height="200"></a></td>
+                  <td class="tg-0pky"><a href="#"
+                      onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/tpdms0159');"><img
+                        src="img/정세은.png" alt="선원 정세은" width="200" height="200"></a></td>
+                  <td class="tg-0pky"><a href="#"
+                      onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/JUNIandPIRATES/daARA_service');"><img
+                        src="img/daARA-ICON.ico" width="200" height="200"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0pky">Crew. Haeun Lee</td>
+                  <td class="tg-0pky">Crew Seeun Jung</td>
+                  <td class="tg-0pky">Project daARA</td>
+                </tr>
+              </tbody>
+            </table>
+            </p>
+        </text>
+
+        <text id='LevelName'> History
+          <p id='Description'>1. 과학기술정보통신부 주최 2021 SW인재페스티벌 한국항공대학교 대표 선정 </p>
+        </text>
+      </div>
+
+      <!-- Insert this line above script imports  -->
+      <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+      <script src="js/daARA_main_jquery.min.js"></script>
+      <!-- Insert this line after script imports -->
+      <script>if (window.module) module = window.module;</script>
+
+      <script src="js/daARA_main_popper.js"></script>
+      <script src="js/daARA_main_bootstrap.min.js"></script>
+      <script src="js/daARA_main.js"></script>
+
+
 </body>
+
 </html>
