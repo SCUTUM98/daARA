@@ -16,6 +16,7 @@ const ipc = require('electron').ipcRenderer;
 
 const {remote, ipcRenderer, BrowserWindow} = require('electron');
 const dialog = require('electron').remote.dialog;
+var browserWindow = remote.getCurrentWindow();
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //DaARA variable
@@ -40,6 +41,7 @@ var final_emotion_result = {
   "UNKNOWN": 0,
   "FEAR": 0,
 };
+var temp_result_checker = new Array();
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //DAARA html 
@@ -78,31 +80,6 @@ var day     = now.getDate();
 var hours   = now.getHours();
 var minutes = now.getMinutes();   
 var seconds = now.getSeconds();
-//------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------
-//캔버스 그리기
-// var drawCANVASBTN = document.getElementById("DEVmodeDRAWCANVAS");
-
-// drawCANVASBTN.addEventListener("click", drawBarPlot());
-
-// var canvas = document.getElementById("EmotionResultBarGraphCavas");
-// canvas.width = 1200;
-// canvas.height = 500;
-// var ctx = canvas.getContext("2d");
-
-// var total_emotion_cnt = 0;
-
-// var TEST_final_emotion_result = {
-//   "HAPPY": 43,
-//   "SAD": 70,
-//   "ANGRY": 120,
-//   "CONFUSED": 20,
-//   "DISGUSTED": 12,
-//   "SURPERISED": 4,
-//   "CALM": 3,
-//   "UNKNOWN": 0,
-//   "FEAR": 0,
-// };
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -201,7 +178,7 @@ function changedOption(obj)
 {
   document.getElementById("showSelectedLecture").innerHTML = obj.value;
   globalSource, class_name = obj.value;
-  console.log(typeof(class_name)) 
+  //console.log(typeof(class_name)) 
   //savedata 초기화
   
 }
@@ -319,6 +296,7 @@ cbox.addEventListener('change', e => {
   if(e.target.checked) {
     checkedFaces.push(e.target.value); //e.target : checkbox로 출석이 된 사람 데이터
     createEXCEL(checkedFaces[checkedFaces.length - 1], true)
+    
 
     for(var i = 0; i < uncheckedFaces.length; i++) {
       if (uncheckedFaces[i] == checkedFaces[checkedFaces.length - 1]) {
@@ -515,20 +493,31 @@ stopBtn.onclick = e => {
   var class_name_to_STRING = {
     name: class_name
   }
-  
   localStorage.setItem('getClassName', JSON.stringify(class_name_to_STRING));
+  localStorage.setItem('getFinalEmotionResult', JSON.stringify(final_emotion_result));
   for (var i=0; i < uncheckedFaces.length; i++) {
     createEXCEL(uncheckedFaces[i], false)
   }
+  
+  localStorage.setItem('getCheckResult', JSON.stringify(temp_result_checker));
   location.href='./daARA_after_lecture.html'
-  localStorage.setItem('getFinalEmotionResult', JSON.stringify(final_emotion_result));
-
+  // var options = {
+  //   title: "출석파일 다운로드",
+  //   filters: [
+  //       {name: '엑셀파일', extensions: ['xls']}
+  //   ],
+  //   defaultPath: month + "월 " + day + "일 " + class_name + " 출석체크.xls"
+  // }
   // let saveDialog = dialog.showSaveDialog(browserWindow, options);
   // saveDialog.then(function(saveTo) {
   //     console.log(saveTo.filePath);
   //     fs.appendFile(saveTo.filePath, save_data, (err) => {
   //       if (err) throw console.log(err);
-  //     });
+  //     })
+  //     
+  //   })
+
+
   //     //추가 로그파일 다운로드 옵션
   //     const options = {
   //       type: 'question',
@@ -578,13 +567,22 @@ function createEXCEL(temp, checkOX) {
   var hours   = now.getHours();
   var minutes = now.getMinutes();   
   var seconds = now.getSeconds();
+  var new_Student_format = new Object();
   if (checkOX) {
     var data= month + "월 " + day + "일\," + hours + ":" + minutes + ":" + seconds + '\,' + temp + '\,' + 'O' + '\n'
     save_data += data
+    // new_Student_format.day =  month + "월 " + day + "일\," + hours + ":" + minutes + ":" + seconds + '\,';
+    // new_Student_format.name = temp + '\,';
+    new_Student_format.result = month + "월 " + day + "일\," + hours + ":" + minutes + ":" + seconds + '\,' + temp + '\,' + "O";
+    temp_result_checker.push(new_Student_format);
   }
   else{
     var data= month + "월 " + day + "일\," + hours + ":" + minutes + ":" + seconds + '\,' + temp + '\,' + 'X' + '\n'
-    save_data +=data
+    save_data += data
+    // new_Student_format.day =  month + "월 " + day + "일\," + hours + ":" + minutes + ":" + seconds;
+    // new_Student_format.name = temp;
+    new_Student_format.result = month + "월 " + day + "일\," + hours + ":" + minutes + ":" + seconds + '\,' + temp + '\,' + "X";
+    temp_result_checker.push(new_Student_format);
   }
 }
 
