@@ -62,11 +62,6 @@ const s3 = new AWS.S3({
   secretAccessKey : SECRET_ACCESS_KEY,
   region          : REGION
 });
-const config = new AWS.Config({
-  accessKeyId: ACCESS_KEY_ID,
-  secretAccessKey: SECRET_ACCESS_KEY,
-  region: REGION
-})
 var bucketParams = {
   Bucket : 'public-daara-test',
 }
@@ -350,37 +345,41 @@ async function takeScreenShot() {
     height: 1080
   }
   let options = { types: ['screen', 'window'], thumbnailSize: thumbSize };
-  const current_dir = app.getAppPath() + '\\screenshot_Images';
-  const screenshotPath = path.join(current_dir, 'screenshot.png'); 
+  const screenshotPath = './screenshot_Images/screenshot.png'; 
 
   //<-----스크린샷 후 screenShot_Images폴더에 screenshot.png로 저장.
   desktopCapturer.getSources(options).then(async sources => {
     for (const source of sources) {
       if(source.name == globalSource.name) {
-        fs.writeFile(screenshotPath, source.thumbnail.toPNG(), function (error) {
-          if (error) return console.log(error)
-          const message = `Saved screenshot to: ${screenshotPath}`
-          //console.log(message)
-        })
+        uploadFile(source.thumbnail.toPNG());
+        // fs.writeFile(screenshotPath, source.thumbnail.toPNG(), function (error) {
+        //   if (error) return console.log(error)
+        //   const message = `Saved screenshot to: ${screenshotPath}`
+        //   //console.log(message)
+        // })
       }
     }
   })
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //Local 캡처 본 S3에 업로드
-  var file = __dirname+"/screenshot_images/screenshot.png";
-  uploadFile(file);
+  // var file = __dirname+"/screenshot_images/screenshot.png";
+  // uploadFile(file);
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //얼굴 비교 후 출석 체크
   const photo_target = '예상 화면.png';//스크린샷 화면
   //const photo_target = buffer;
   const client = new AWS.Rekognition();
+
+  console.log(S3imagesName + "에서 받아오기 시작")
   
   for (const item of S3imagesName) {
     var photo_source = class_name + "/" + item.toString();
-
+    
     if(item == "예상 화면.png" || item == "screenshot.png" || item == "Black.png" ) continue;
+
+    console.log("s3에서 아이템을 받아오기 성공!")
 
     const params = {
       SourceImage: {
@@ -397,6 +396,7 @@ async function takeScreenShot() {
       },
       SimilarityThreshold: 70
     }
+    
     client.compareFaces(params, function(err, response) {
       if (err) {
         //console.log(err, err.stack); //an error occurred
@@ -543,8 +543,8 @@ stopBtn.onclick = e => {
   //    })
   //   })
     //검은 화면 업로드: 
-    var file = __dirname+"/screenshot_images/Black.png";
-    console.log(file);
+    // var file = __dirname+"/screenshot_images/Black.png";
+    // console.log(file);
     uploadFile(file);
 }
 
@@ -588,7 +588,7 @@ function createEXCEL(temp, checkOX) {
 
 const uploadFile = (fileName) => {
   // Read content from the file
-  const fileContent = fs.readFileSync(fileName);
+  const fileContent = fileName
 
   // Setting up S3 upload parameters
   const params = {
