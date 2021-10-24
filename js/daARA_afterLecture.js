@@ -81,6 +81,7 @@ downloadResultBTN.addEventListener('click', e => {
         if (err) throw console.log(err);
       });
     })
+    return;
 })
 
 viewLogBTN.addEventListener('click', e => {
