@@ -62,6 +62,11 @@ const s3 = new AWS.S3({
   secretAccessKey : SECRET_ACCESS_KEY,
   region          : REGION
 });
+const client = new AWS.Rekognition({
+  accessKeyId     : ACCESS_KEY_ID,
+  secretAccessKey : SECRET_ACCESS_KEY,
+  region          : REGION
+});
 var bucketParams = {
   Bucket : 'public-daara-test',
 }
@@ -370,7 +375,7 @@ async function takeScreenShot() {
 //얼굴 비교 후 출석 체크
   const photo_target = '예상 화면.png';//스크린샷 화면
   //const photo_target = buffer;
-  const client = new AWS.Rekognition();
+  
 
   console.log(S3imagesName + "에서 받아오기 시작")
   

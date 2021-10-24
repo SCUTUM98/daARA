@@ -1,1 +1,54 @@
-2.1
+ver 2.0.0
+- daARA renewal
+	- new user interface
+		- new menu index
+		- add navigation bar
+- fixed issues 
+	- fix Jquery issues on Electron
+
+ver 2.0.1
+- update
+	- new tap for adding lecture
+	- add directions for daARA service
+		- add js for youtube video
+	- add functions
+		- click logo image will be linked to the main page
+- fixed issues
+	- fixed exit button error(now working well!)
+
+ver 2.0.2
+- update
+	- new design
+		- change youtube style in directions
+		- new button style
+	- add functions
+		- register new student
+- fixed issues
+	- fixed unusable links
+
+ver 2.0.3
+- update
+	- new pages
+		- add About daARA page
+			- information about daARA project & Team daARA
+		- add Release Note page
+			- for daARA service's history
+
+ver 2.0.4
+- update
+	- update relaeas note by txt file
+	- new design
+		- new design for release note page
+		- add automatic scrolling bar for release note
+
+ver 2.1.0
+- update
+	- new design
+		- renewal lecture result page design (angry captain)
+			- now you can check emotion canvas for the lecture
+		- change Electron control design
+- fixed issues
+	- save excel file button fixed
+	- electron webview control banner fixed
+		- now you can use your local browser on your PC 
+	
